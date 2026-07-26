@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CaretMark from '../components/CaretMark.astro';
+import PhotoHeader from '../components/PhotoHeader.astro';
+import CorrectedHeading from '../components/CorrectedHeading.astro';
+import HighlightMark from '../components/HighlightMark.astro';
+import PhotoCutout from '../components/PhotoCutout.astro';
+import Scribble from '../components/Scribble.astro';
+import neonPhoto from '../assets/photos/neon.jpg';
+
+const categories = [
+  {
+    n: '01',
+    title: 'Copywriter / Creative Group Head',
+    body: 'The craft, and the leadership of it. Headlines, scripts, and campaign lines — in English and Bahasa Malaysia — written to be spoken aloud before they’re ever approved, plus the edit and proofread pass that catches what a sentence is actually trying to say.',
+    tags: ['Idea & Concept', 'Copywriting', 'Edit & Proofread'],
+  },
+  {
+    n: '02',
+    title: 'Creative Strategy',
+    body: 'Figuring out what a brand should be saying, and why — before anyone starts writing.',
+    tags: ['Strategy'],
+  },
+  {
+    n: '03',
+    title: 'Wellness',
+    body: 'Mindfulness and clarity work for people, not just brands. Same instinct, different room.',
+    tags: ['Wellness'],
+  },
+];
+---
+<BaseLayout title="Services" description="Content, Strategy, Consultancy, and Wellness Services — for clients including Apple, Grab, foodpanda, Nestle, and Toyota.">
+  <PhotoHeader src={neonPhoto} alt="Indra Irwan lit by a neon sign at night." eyebrow="What I actually do">
+    <CorrectedHeading
+      variant="light"
+      draft="Full-service creative solutions provider."
+      correction="In plain terms —"
+      final="Content, Strategy, Consultancy,<br/>and Wellness Services."
+    />
+    <p slot="lead" class="photo-header__lead">
+      For over a decade I've crafted campaigns for global brands like
+      <HighlightMark>Apple, Grab, foodpanda, Nestle, and Toyota</HighlightMark> — helping them find
+      their voice in a crowded marketplace.
+    </p>
+  </PhotoHeader>
+
+  <CaretMark />
+
+  <section class="container categories">
+    {categories.map((c) => (
+      <div class="category reveal">
+        <span class="category__n">{c.n}</span>
+        <h2 class="category__title">{c.title}</h2>
+        <p class="category__body">{c.body}</p>
+        <ul class="category__tags">
+          {c.tags.map((t) => <li>{t}</li>)}
+        </ul>
+      </div>
+    ))}
+  </section>
+
+  <section class="container services-cta reveal">
+    <div class="services-cta__block">
+      <p class="services-cta__lead">Find Time to Talk</p>
+      <p class="services-cta__body">
+        Have any questions? Let's talk. Contact me to get the answer you need.
+      </p>
+      <a href="/contact" class="btn btn-primary">Get in touch</a>
+    </div>
+    <div class="services-cta__block">
+      <p class="services-cta__lead">Want the full picture?</p>
+      <p class="services-cta__body">Case studies, career timeline, the works.</p>
+      <a href="/indra-irwan-profile.pdf" class="btn">Download my profile</a>
+    </div>
+
+    <div class="sticker-layer">
+      <PhotoCutout
+        file="cutout-garst"
+        rotate={-8}
+        width="7.5rem"
+        style="right:-8.25rem; top:0;"
+      />
+      <PhotoCutout
+        file="cutout-obj-keyboard"
+        rotate={5}
+        width="8rem"
+        style="left:-8.75rem; bottom:0;"
+      />
+      <Scribble kind="arrow" rotate={162} size="2.75rem" style="right:-4.5rem; bottom:1.5rem;" />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    padding-block: clamp(2.5rem, 6vw, 4rem);
+  }
+  .category {
+    border-top: 3px solid var(--color-mark);
+    padding-top: 1.5rem;
+  }
+  .category__n {
+    font-family: var(--font-accent);
+    color: var(--color-mark);
+    font-size: 0.85rem;
+  }
+  .category__title {
+    font-size: clamp(1.25rem, 2.1vw, 1.55rem);
+    margin-block: 0.6rem 0.9rem;
+    max-width: 18ch;
+  }
+  .category__body {
+    color: var(--color-text-soft);
+    font-size: 0.98rem;
+    margin-bottom: 1.25rem;
+  }
+  .category__tags {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .category__tags li {
+    font-family: var(--font-accent);
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: var(--color-text-soft);
+    border: 1px solid var(--color-line);
+    padding: 0.35em 0.6em;
+  }
+
+  .services-cta {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    padding-block: clamp(2.5rem, 6vw, 4rem) clamp(4rem, 8vw, 6rem);
+    border-top: 1px solid var(--color-line);
+  }
+  .services-cta__lead {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+    margin: 0 0 0.5rem;
+  }
+  .services-cta__body {
+    color: var(--color-text-soft);
+    margin: 0 0 1.25rem;
+  }
+
+  @media (max-width: 860px) {
+    .categories { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) {
+    .services-cta { grid-template-columns: 1fr; }
+  }
+</style>

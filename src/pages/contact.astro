@@ -1,0 +1,314 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PhotoHeader from '../components/PhotoHeader.astro';
+import CaretMark from '../components/CaretMark.astro';
+import CorrectedHeading from '../components/CorrectedHeading.astro';
+import CircleMark from '../components/CircleMark.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import PhotoSticker from '../components/PhotoSticker.astro';
+import PhotoCutout from '../components/PhotoCutout.astro';
+import RansomLetters from '../components/RansomLetters.astro';
+import flowerShop from '../assets/photos/flower-shop.jpg';
+import stickerWalking from '../assets/photos/sticker-walking.jpg';
+
+const categories = [
+  {
+    category: 'Copywriter / Creative Group Head',
+    label: 'Copywriter /<br/>Creative Group Head',
+    prompt: "What's the brief?",
+  },
+  {
+    category: 'Creative Strategy',
+    label: 'Creative Strategy',
+    prompt: "What's the challenge?",
+  },
+  {
+    category: 'Wellness',
+    label: 'Wellness',
+    prompt: 'What are you looking to work on?',
+  },
+  {
+    category: 'Something else',
+    label: 'Something else',
+    prompt: "What's on your mind?",
+  },
+];
+---
+<BaseLayout title="Contact" description="Get in touch with Indra Irwan — based in Petaling Jaya, Malaysia. Email, phone, or the form below.">
+  <PhotoHeader src={flowerShop} alt="Indra Irwan standing outside a flower shop at night." eyebrow="Open for notes">
+    <CorrectedHeading
+      variant="light"
+      draft="Reach Out Anytime."
+      correction="Or just —"
+      final="Get In Touch."
+    />
+    <p slot="lead" class="photo-header__lead">
+      Based in Petaling Jaya, Malaysia. I can easily be contacted for a coffee catch-up.
+    </p>
+  </PhotoHeader>
+
+  <CaretMark />
+
+  <section class="container contact">
+    <div class="contact__intro reveal">
+      <p class="contact__reached">I can be reached at:</p>
+      <dl class="contact__details">
+        <div>
+          <dt>Email</dt>
+          <dd><a href="mailto:indrairwan.ms@gmail.com"><CircleMark>indrairwan.ms@gmail.com</CircleMark></a></dd>
+        </div>
+        <div>
+          <dt>Phone</dt>
+          <dd><a href="tel:+60162933073">+60 16-293 3073</a></dd>
+        </div>
+        <div>
+          <dt>Profile</dt>
+          <dd><a href="/indra-irwan-profile.pdf">Download &rarr;</a></dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="contact-form-wrap reveal">
+      <Eyebrow text="What's this about?" />
+      <div class="category-picker" id="category-picker" role="group" aria-label="What would you like to get in touch about?">
+        {categories.map((c) => (
+          <button
+            type="button"
+            class="category-btn"
+            data-category={c.category}
+            data-prompt={c.prompt}
+          >
+            <span set:html={c.label} />
+          </button>
+        ))}
+      </div>
+
+      <form class="contact-form" id="contact-form">
+        <input type="hidden" id="category" name="category" />
+        <div class="contact-form__collapse" id="contact-form-collapse">
+          <div class="contact-form__fields">
+            <p class="contact-form__selected" id="contact-form-selected"></p>
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="field">
+              <label for="message" id="message-label">What's the brief?</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send it over</button>
+            <p class="contact-form__note" id="contact-form-note" role="status"></p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="sticker-layer">
+      <PhotoCutout
+        file="cutout-pole"
+        rotate={-8}
+        width="7rem"
+        style="left:-7.75rem; bottom:0;"
+      />
+      <PhotoSticker
+        src={stickerWalking}
+        alt=""
+        rotate={9}
+        width="7rem"
+        aspect="4 / 5"
+        objectPosition="60% 30%"
+        style="right:-7.75rem; top:0;"
+      />
+      <RansomLetters word="HI" size="1.5rem" rotate={-5} maxWidth="6rem" style="right:-6.5rem; bottom:3rem;" />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact {
+    position: relative;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: clamp(2.5rem, 6vw, 5rem);
+    padding-block: clamp(2rem, 5vw, 3rem) clamp(5rem, 10vw, 8rem);
+  }
+  .contact__reached {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    margin: 0;
+  }
+  .contact__details {
+    margin: 2rem 0 0;
+    display: grid;
+    gap: 1.25rem;
+  }
+  .contact__details dt {
+    font-family: var(--font-accent);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--color-text-soft);
+  }
+  .contact__details dd {
+    margin: 0.2rem 0 0;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+  }
+  .contact__details a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-line);
+  }
+  .contact__details a:hover {
+    color: var(--color-mark);
+    border-bottom-color: var(--color-mark);
+  }
+
+  .category-picker {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+  .category-btn {
+    font-family: var(--font-accent);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    line-height: 1.35;
+    text-align: left;
+    background: var(--color-base);
+    border: 1.5px solid var(--color-line);
+    color: var(--color-text);
+    padding: 1rem 1.1rem;
+    cursor: pointer;
+    transition: border-color 0.2s var(--ease-editorial), background 0.2s var(--ease-editorial), color 0.2s var(--ease-editorial);
+  }
+  .category-btn:hover {
+    border-color: var(--color-mark);
+  }
+  .category-btn.is-selected {
+    border-color: var(--color-mark);
+    background: var(--color-mark);
+    color: var(--color-base);
+  }
+
+  .contact-form { margin-top: 0; }
+  .contact-form__collapse {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s var(--ease-editorial);
+  }
+  .contact-form__collapse.is-open {
+    grid-template-rows: 1fr;
+  }
+  .contact-form__fields {
+    overflow: hidden;
+    display: grid;
+    gap: 1.25rem;
+    border: 1px solid var(--color-line);
+    padding: 0 clamp(1.5rem, 3vw, 2.5rem);
+    opacity: 0;
+    transition: opacity 0.35s var(--ease-editorial) 0.1s, padding-block 0.5s var(--ease-editorial);
+  }
+  .contact-form__collapse.is-open .contact-form__fields {
+    opacity: 1;
+    padding-block: clamp(1.5rem, 3vw, 2.5rem);
+    margin-top: 1.5rem;
+  }
+  .contact-form__selected {
+    font-family: var(--font-accent);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    color: var(--color-mark);
+    margin: 0;
+  }
+  .field { display: grid; gap: 0.4rem; }
+  .field label {
+    font-family: var(--font-accent);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+  }
+  .field input, .field textarea {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.75em 0.85em;
+    border: 1.5px solid var(--color-line);
+    background: var(--color-base);
+    color: var(--color-text);
+    resize: vertical;
+  }
+  .field input:focus, .field textarea:focus {
+    outline: none;
+    border-color: var(--color-mark);
+  }
+  .contact-form .btn { justify-self: start; }
+  .contact-form__note {
+    font-size: 0.9rem;
+    color: var(--color-text-soft);
+    min-height: 1.2em;
+    margin: 0;
+  }
+
+  @media (max-width: 860px) {
+    .contact { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .category-picker { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.category-btn');
+  const collapse = document.getElementById('contact-form-collapse');
+  const categoryInput = document.getElementById('category') as HTMLInputElement | null;
+  const selectedText = document.getElementById('contact-form-selected');
+  const messageLabel = document.getElementById('message-label');
+  const nameInput = document.getElementById('name') as HTMLInputElement | null;
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      buttons.forEach((b) => b.classList.remove('is-selected'));
+      btn.classList.add('is-selected');
+
+      const category = btn.dataset.category || '';
+      const prompt = btn.dataset.prompt || "What's the brief?";
+
+      if (categoryInput) categoryInput.value = category;
+      if (selectedText) selectedText.textContent = `Reaching out about: ${category}`;
+      if (messageLabel) messageLabel.textContent = prompt;
+
+      const wasOpen = collapse?.classList.contains('is-open');
+      collapse?.classList.add('is-open');
+      if (!wasOpen) {
+        setTimeout(() => nameInput?.focus(), 400);
+      }
+    });
+  });
+
+  // No backend is wired up yet — this opens a pre-filled email to Indra so the form
+  // works today regardless of hosting. Swap for Netlify Forms / Formspree once the
+  // site has a fixed host.
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const note = document.getElementById('contact-form-note');
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const name = String(data.get('name') || '');
+    const email = String(data.get('email') || '');
+    const message = String(data.get('message') || '');
+    const category = String(data.get('category') || 'General');
+
+    const subject = encodeURIComponent(`${category} — brief from ${name}`);
+    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+    window.location.href = `mailto:indrairwan.ms@gmail.com?subject=${subject}&body=${body}`;
+
+    if (note) note.textContent = 'Opening your email client — send it from there.';
+  });
+</script>

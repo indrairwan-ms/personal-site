@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ParallaxImage from '../components/ParallaxImage.astro';
+import CaretMark from '../components/CaretMark.astro';
+import CorrectedHeading from '../components/CorrectedHeading.astro';
+import UnderlineMark from '../components/UnderlineMark.astro';
+import HighlightMark from '../components/HighlightMark.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import LogoTicker from '../components/LogoTicker.astro';
+import PhotoSticker from '../components/PhotoSticker.astro';
+import PhotoCutout from '../components/PhotoCutout.astro';
+import WordScribble from '../components/WordScribble.astro';
+import portrait from '../assets/photos/about-portrait.jpg';
+import stickerOptical from '../assets/photos/sticker-optical.jpg';
+---
+<BaseLayout title="About" description="Indra Irwan — Advertising Creative, Writer, and Wellness Guide. Not a resume dump.">
+  <section class="container about-hero">
+    <div class="about-hero__copy">
+      <Eyebrow text="The unedited version" />
+      <CorrectedHeading
+        draft="Advertising Creative with 10+ years of experience."
+        correction="Actually, let me start over —"
+        final="I grew up in a kampung that happened to be inside a city."
+      />
+      <p class="reveal about-hero__lead">
+        Close enough to the culture to write inside it. Far enough outside to notice what everyone
+        else stopped seeing.
+      </p>
+    </div>
+    <div class="about-hero__photo reveal-scale">
+      <ParallaxImage src={portrait} alt="Portrait of Indra Irwan, leaning against a wall." aspect="4 / 5" priority={true} />
+    </div>
+  </section>
+
+  <CaretMark />
+
+  <section class="container about-body">
+    <div class="about-body__text reveal">
+      <p>
+        For over a decade, I've sought to integrate commerce and human experience. I have crafted
+        campaigns for global brands like Apple, Grab, foodpanda, Nestle, and Toyota, helping them find
+        their voice in a crowded marketplace. Having worked inside the engines of global marketing, I
+        provide a unique perspective on how systems shape our individual identities.
+      </p>
+      <p>
+        But after more than 10 years in the industry, I realised that my real work is about
+        <UnderlineMark>reclaiming meaning</UnderlineMark>. Whether I'm consulting for a business or
+        writing about systemic issues, my goal is to help you find balance.
+      </p>
+      <p>
+        Beyond the boardroom, I am a <HighlightMark>wellness enthusiast and mindfulness practitioner</HighlightMark> dedicated to
+        helping people navigate modern life.
+      </p>
+    </div>
+
+    <blockquote class="about-quote reveal">
+      From meaning, we find value.
+    </blockquote>
+
+    <div class="about-body__text reveal">
+      <p>
+        I don't perform a curated version of myself for very long — I never liked picture day, and I
+        still don't take many photos of myself. But I've made peace with being seen, on my own terms,
+        when it actually matters. This site is one of those terms.
+      </p>
+      <p>
+        Off the clock, I read more news than is good for me, and think too much about systems, stories,
+        and why people believe the ones they do. Some of it ends up on the <a href="/blog">blog</a>.
+      </p>
+    </div>
+
+    <div class="sticker-layer">
+      <PhotoSticker
+        src={stickerOptical}
+        alt=""
+        rotate={8}
+        width="8.5rem"
+        aspect="4 / 5"
+        objectPosition="50% 25%"
+        style="right:-9.25rem; top:2%;"
+      />
+      <PhotoCutout
+        file="cutout-obj-glasses"
+        rotate={-6}
+        width="7rem"
+        style="right:-7.75rem; bottom:8%;"
+      />
+      <WordScribble text="writer" replace="thinker" rotate={-3} size="1.5rem" style="right:-8.5rem; top:36%;" />
+    </div>
+  </section>
+
+  <CaretMark />
+
+  <section class="clients reveal">
+    <div class="container">
+      <Eyebrow text="Who I've worked with" />
+      <p class="clients__lead">
+        Over fifteen years, that's meant working with global names and regional challengers alike —
+        inside agencies, in-house, and everything after.
+      </p>
+    </div>
+    <LogoTicker />
+    <p class="clients__note container">Not an exhaustive list.</p>
+  </section>
+
+  <section class="container about-cta-wrap">
+    <div class="about-cta reveal">
+      <p>Want the fifteen-year version, with the receipts?</p>
+      <a href="/indra-irwan-profile.pdf" class="btn btn-primary">Download my profile</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+    padding-block: clamp(2.5rem, 6vw, 5rem);
+  }
+  .about-hero__lead {
+    margin-top: 1.5rem;
+    font-size: 1.05rem;
+    color: var(--color-text-soft);
+    max-width: 42ch;
+  }
+  .about-hero__photo { border: 1px solid var(--color-line); }
+
+  .about-body {
+    position: relative;
+    padding-block: clamp(1rem, 4vw, 2rem) clamp(4rem, 8vw, 6rem);
+  }
+  .about-body__text p { font-size: clamp(1.05rem, 0.85rem + 0.6vw, 1.4rem); }
+  .about-quote {
+    font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+    margin-block: 2.5rem;
+  }
+  .about-cta {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .about-cta p {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  .about-cta-wrap {
+    padding-block: 0 clamp(4rem, 8vw, 6rem);
+  }
+
+  .clients {
+    padding-block: clamp(2.5rem, 6vw, 4rem);
+  }
+  .clients__lead {
+    max-width: 52ch;
+    color: var(--color-text-soft);
+    font-size: 1.05rem;
+    margin: 1.25rem 0 2rem;
+  }
+  .clients__note {
+    margin: 1.25rem auto 0;
+    font-family: var(--font-accent);
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--color-text-soft);
+  }
+
+  @media (max-width: 860px) {
+    .about-hero { grid-template-columns: 1fr; }
+    .about-hero__photo { order: -1; max-width: 20rem; margin-inline: auto; }
+  }
+</style>

@@ -1,0 +1,49 @@
+---
+// A hand-drawn red circle around inline text — one of the site's editorial-mark
+// devices, used sparingly to flag a single word or phrase rather than a whole line.
+---
+<span class="circle-mark reveal-target" data-mark>
+  <svg class="circle-mark__svg" viewBox="0 0 200 80" preserveAspectRatio="none" aria-hidden="true">
+    <path
+      pathLength="1"
+      d="M14,42 C9,17 58,4 100,5 C152,6 196,16 189,43 C184,70 138,77 99,76 C53,75 19,67 14,42 Z"
+    />
+  </svg>
+  <span class="circle-mark__text"><slot /></span>
+</span>
+
+<style>
+  .circle-mark {
+    position: relative;
+    display: inline-block;
+    padding: 0.3em 0.7em;
+  }
+  .circle-mark__svg {
+    /* Generous clearance -- the path is a hand-drawn wobble, not a true ellipse,
+       so on long single-line content (e.g. an email address) it needs real room
+       on the sides or the curve reads as cutting into the first/last characters. */
+    position: absolute;
+    inset: -0.6em -0.75em;
+    width: calc(100% + 1.5em);
+    height: calc(100% + 1.2em);
+    pointer-events: none;
+  }
+  .circle-mark__svg path {
+    fill: none;
+    stroke: var(--color-mark);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset 0.9s var(--ease-editorial);
+  }
+  .circle-mark.in-view .circle-mark__svg path {
+    stroke-dashoffset: 0;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .circle-mark__svg path {
+      stroke-dashoffset: 0 !important;
+      transition: none !important;
+    }
+  }
+</style>

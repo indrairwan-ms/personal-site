@@ -1,0 +1,109 @@
+---
+// A rolling, multi-row logo ticker — mirrors the footer's marquee construction
+// (duplicated track, edge-fade mask, pause on hover, reduced-motion aware) but
+// carries real client logos instead of text.
+const rows: { name: string; file: string }[][] = [
+  [
+    { name: 'Apple', file: 'apple' },
+    { name: 'DHL', file: 'dhl' },
+    { name: 'Grab', file: 'grab' },
+    { name: 'foodpanda', file: 'foodpanda' },
+    { name: 'Nestlé', file: 'nestle' },
+    { name: 'Toyota', file: 'toyota' },
+    { name: 'MG', file: 'mg' },
+    { name: 'Isuzu', file: 'isuzu' },
+  ],
+  [
+    { name: 'TikTok for Business', file: 'tiktok-for-business' },
+    { name: 'TM', file: 'tm' },
+    { name: 'XPAX', file: 'xpax' },
+    { name: 'digi', file: 'digi' },
+    { name: 'U Mobile', file: 'u-mobile' },
+    { name: 'Mondelēz International', file: 'mondelez' },
+    { name: 'Suntory', file: 'suntory' },
+  ],
+  [
+    { name: "Nando's", file: 'nandos' },
+    { name: 'Bata', file: 'bata' },
+    { name: 'Canon', file: 'canon' },
+    { name: 'Perodua', file: 'perodua' },
+    { name: 'Tenaga Nasional', file: 'tenaga-nasional' },
+    { name: 'Malaysia Airlines', file: 'malaysia-airlines' },
+    { name: 'Dutch Lady', file: 'dutch-lady' },
+  ],
+];
+const speeds = [34, 40, 37];
+const directions = ['normal', 'reverse', 'normal'];
+---
+<div class="logo-ticker">
+  {rows.map((row, i) => (
+    <div class="logo-row" style={`--dur:${speeds[i]}s;--dir:${directions[i]}`}>
+      <div class="logo-row__track">
+        {[0, 1].map(() => (
+          <div class="logo-row__group">
+            {row.map((logo) => (
+              <span class="logo-row__item">
+                <img src={`/logos/${logo.file}.png`} alt={logo.name} loading="lazy" />
+              </span>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .logo-ticker {
+    display: grid;
+    gap: clamp(0.75rem, 2vw, 1.25rem);
+  }
+  .logo-row {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%);
+  }
+  .logo-row__track {
+    display: flex;
+    width: max-content;
+    animation: logo-scroll var(--dur) linear infinite;
+    animation-direction: var(--dir);
+  }
+  .logo-row__group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .logo-row__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(6.5rem, 12vw, 8.5rem);
+    height: clamp(2.5rem, 5.5vw, 3.25rem);
+    padding-inline: clamp(0.75rem, 2vw, 1.25rem);
+    box-sizing: content-box;
+  }
+  .logo-row__item img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.82;
+    filter: grayscale(1);
+    transition: opacity 0.25s var(--ease-editorial);
+  }
+  .logo-row__item:hover img {
+    opacity: 1;
+  }
+  @keyframes logo-scroll {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(-50%, 0, 0); }
+  }
+  .logo-row:hover .logo-row__track {
+    animation-play-state: paused;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .logo-row__track { animation: none; }
+  }
+</style>

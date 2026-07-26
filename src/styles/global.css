@@ -1,0 +1,250 @@
+/* ---------------------------------------------------------------
+   Tokens
+--------------------------------------------------------------- */
+:root {
+  --color-base: #f7f7f4;
+  --color-text: #161412;
+  --color-text-soft: #4a4742;
+  --color-mark: #e5271a;
+  --color-mark-rgb: 229, 39, 26;
+  --color-highlight: #f5e663;
+  --color-line: #dedad2;
+
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-body: 'Inconsolata', ui-monospace, 'SF Mono', monospace;
+  --font-accent: 'Syne Mono', ui-monospace, monospace;
+  --font-hand: 'Caveat', cursive;
+
+  --max-width: 78rem;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+
+  --ease-editorial: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-reveal: 0.8s;
+}
+
+/* ---------------------------------------------------------------
+   Reset
+--------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--color-base);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  /* Sticker cutouts intentionally bleed past section edges into the margin --
+     this guarantees that never turns into an unwanted horizontal scrollbar. */
+  overflow-x: hidden;
+}
+img, picture, video { max-width: 100%; display: block; }
+a { color: inherit; }
+button { font: inherit; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+p { margin: 0 0 1.25em; }
+p:last-child { margin-bottom: 0; }
+
+.container {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ---------------------------------------------------------------
+   Eyebrow labels — the consistent wayfinding tag used on every page
+--------------------------------------------------------------- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--font-accent);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-mark);
+  margin: 0 0 1rem;
+}
+.eyebrow::before {
+  content: '';
+  width: 0.9em;
+  height: 2px;
+  background: var(--color-mark);
+  display: inline-block;
+}
+
+/* ---------------------------------------------------------------
+   Editorial mark device — strikethrough / handwritten correction
+--------------------------------------------------------------- */
+.struck {
+  color: var(--color-text-soft);
+  text-decoration: line-through;
+  text-decoration-color: var(--color-mark);
+  text-decoration-thickness: 0.08em;
+}
+
+.correction {
+  font-family: var(--font-hand);
+  color: var(--color-mark);
+  font-weight: 600;
+  display: inline-block;
+  transform: rotate(-2.5deg);
+}
+
+/* ---------------------------------------------------------------
+   Caret / insert mark — section transition device
+--------------------------------------------------------------- */
+.caret-mark {
+  display: flex;
+  justify-content: center;
+  margin-block: clamp(2.5rem, 6vw, 5rem);
+  color: var(--color-mark);
+}
+.caret-mark svg {
+  width: 2rem;
+  height: 2rem;
+  overflow: visible;
+}
+.caret-mark path {
+  fill: none;
+  stroke: var(--color-mark);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  transition: stroke-dashoffset var(--dur-reveal) var(--ease-editorial);
+}
+.caret-mark.in-view path {
+  stroke-dashoffset: 0;
+}
+
+/* ---------------------------------------------------------------
+   Scroll-entrance reveals (parity with the live site's block animations)
+--------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity var(--dur-reveal) var(--ease-editorial),
+              transform var(--dur-reveal) var(--ease-editorial);
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity var(--dur-reveal) var(--ease-editorial),
+              transform var(--dur-reveal) var(--ease-editorial);
+}
+.reveal-scale.in-view {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .caret-mark path {
+    stroke-dashoffset: 0 !important;
+    transition: none !important;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Sticker layer -- scattered photo cutouts used as decorative filler.
+   Requires the nearest positioned ancestor to have position:relative.
+   Hidden below 1100px so it never crowds tablet/mobile, where there's
+   no spare whitespace for it to live in anyway.
+--------------------------------------------------------------- */
+.sticker-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+.sticker-layer .photo-sticker,
+.sticker-layer .photo-cutout,
+.sticker-layer .scribble-mark,
+.sticker-layer .word-scribble,
+.sticker-layer .ransom-word {
+  position: absolute;
+  pointer-events: auto;
+}
+@media (max-width: 1100px) {
+  .sticker-layer { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sticker-layer .photo-sticker:hover {
+    transform: rotate(var(--rotate)) !important;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Buttons
+--------------------------------------------------------------- */
+.btn {
+  font-family: var(--font-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.9em 1.4em;
+  border: 1.5px solid var(--color-text);
+  background: transparent;
+  color: var(--color-text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s var(--ease-editorial), color 0.2s var(--ease-editorial), border-color 0.2s var(--ease-editorial);
+}
+.btn:hover {
+  background: var(--color-text);
+  color: var(--color-base);
+}
+.btn-primary {
+  border-color: var(--color-mark);
+  background: var(--color-mark);
+  color: var(--color-base);
+}
+.btn-primary:hover {
+  background: var(--color-text);
+  border-color: var(--color-text);
+}
+
+/* ---------------------------------------------------------------
+   Blockquote — shared between blog + about pull quotes
+--------------------------------------------------------------- */
+blockquote {
+  margin: 1.75em 0;
+  padding-left: 1.25em;
+  border-left: 3px solid var(--color-mark);
+  font-family: var(--font-display);
+  font-size: 1.15em;
+  font-style: normal;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

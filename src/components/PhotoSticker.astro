@@ -1,0 +1,65 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  rotate?: number;
+  width?: string;
+  aspect?: string;
+  objectPosition?: string;
+  class?: string;
+  style?: string;
+}
+const {
+  src,
+  alt,
+  rotate = 0,
+  width = '9rem',
+  aspect = '1 / 1',
+  objectPosition = '50% 50%',
+  class: className = '',
+  style: positionStyle = '',
+} = Astro.props;
+---
+<div
+  class={`photo-sticker ${className}`}
+  style={`--rotate: ${rotate}deg; --w: ${width}; ${positionStyle}`}
+  aria-hidden="true"
+>
+  <div class="photo-sticker__frame" style={`aspect-ratio: ${aspect};`}>
+    <Image
+      src={src}
+      alt={alt}
+      class="photo-sticker__img"
+      style={`object-position: ${objectPosition};`}
+      widths={[160, 240, 320]}
+      sizes={width}
+      loading="lazy"
+    />
+  </div>
+</div>
+
+<style>
+  .photo-sticker {
+    width: var(--w);
+    background: #fdfdfb;
+    padding: 0.4rem 0.4rem 1rem;
+    box-shadow: 0 14px 26px rgba(22, 20, 18, 0.22), 0 3px 8px rgba(22, 20, 18, 0.16);
+    transform: rotate(var(--rotate));
+    transition: transform 0.35s var(--ease-editorial);
+  }
+  .photo-sticker:hover {
+    transform: rotate(0deg) scale(1.04);
+  }
+  .photo-sticker__frame {
+    overflow: hidden;
+    background: var(--color-line);
+  }
+  .photo-sticker :global(.photo-sticker__img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+</style>

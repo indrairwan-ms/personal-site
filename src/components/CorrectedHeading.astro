@@ -1,0 +1,118 @@
+---
+interface Props {
+  draft: string;
+  correction: string;
+  final: string;
+  tag?: 'h1' | 'h2';
+  variant?: 'dark' | 'light';
+  size?: 'large' | 'compact';
+}
+const { draft, correction, final, tag: Tag = 'h1', variant = 'dark', size = 'compact' } = Astro.props;
+---
+<div class={`corrected corrected--${variant} corrected--${size}`} data-corrected-heading>
+  <p class="corrected__draft">
+    <span class="corrected__draft-text">{draft}</span>
+    <span class="corrected__correction" aria-hidden="true">{correction}</span>
+  </p>
+  <Tag class="corrected__final">
+    <span set:html={final} />
+  </Tag>
+  <span class="visually-hidden">{correction}</span>
+</div>
+
+<style>
+  .corrected {
+    display: grid;
+    gap: 0.5rem;
+  }
+  .corrected__draft {
+    position: relative;
+    font-family: var(--font-body);
+    color: var(--color-text-soft);
+    margin: 0 0 0.6rem;
+    transition: opacity 0.5s var(--ease-editorial), transform 0.5s var(--ease-editorial);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.55em;
+  }
+  .corrected--large .corrected__draft { font-size: clamp(1rem, 2vw, 1.25rem); }
+  .corrected--compact .corrected__draft { font-size: clamp(0.85rem, 1.3vw, 1.05rem); }
+
+  .corrected__draft-text {
+    position: relative;
+    display: inline-block;
+  }
+  .corrected__draft-text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 52%;
+    width: 0%;
+    height: 2px;
+    background: var(--color-mark);
+    transition: width 0.55s var(--ease-editorial);
+  }
+  .corrected.step-1 .corrected__draft-text::after { width: 100%; }
+
+  .corrected__correction {
+    font-family: var(--font-hand);
+    font-size: 1.35em;
+    font-weight: 600;
+    color: var(--color-mark);
+    opacity: 0;
+    transform: translateY(6px) rotate(-3deg);
+    transition: opacity 0.4s var(--ease-editorial), transform 0.4s var(--ease-editorial);
+    display: inline-block;
+  }
+  .corrected.step-2 .corrected__correction {
+    opacity: 1;
+    transform: translateY(0) rotate(-2.5deg);
+  }
+
+  .corrected__final {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s var(--ease-editorial), transform 0.6s var(--ease-editorial);
+  }
+  .corrected--large .corrected__final { font-size: clamp(2.6rem, 6.5vw, 5.2rem); }
+  .corrected--compact .corrected__final { font-size: clamp(2.2rem, 5.5vw, 3.8rem); }
+
+  .corrected.step-3 .corrected__draft {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  .corrected.step-3 .corrected__final {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .corrected--light .corrected__draft { color: rgba(247, 247, 244, 0.75); }
+  .corrected--light .corrected__final { color: var(--color-base); }
+
+  .corrected.reduced .corrected__draft { display: none; }
+  .corrected.reduced .corrected__final {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+</style>
+
+<script>
+  const els = document.querySelectorAll<HTMLElement>('[data-corrected-heading]');
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  els.forEach((el) => {
+    if (prefersReduced) {
+      el.classList.add('reduced');
+      return;
+    }
+    const steps = ['step-1', 'step-2', 'step-3'];
+    const delays = [500, 900, 1000];
+    let total = 300;
+    steps.forEach((cls, i) => {
+      total += delays[i];
+      setTimeout(() => el.classList.add(cls), total);
+    });
+  });
+</script>

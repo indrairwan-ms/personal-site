@@ -1,0 +1,107 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PhotoHeader from '../../components/PhotoHeader.astro';
+import CaretMark from '../../components/CaretMark.astro';
+import CorrectedHeading from '../../components/CorrectedHeading.astro';
+import PhotoSticker from '../../components/PhotoSticker.astro';
+import Scribble from '../../components/Scribble.astro';
+import nightMarket from '../../assets/photos/night-market.jpg';
+import stickerTram from '../../assets/photos/sticker-tram.jpg';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
+function formatDate(d: string) {
+  return new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+---
+<BaseLayout title="Blog" description="Unpaid opinions from Indra Irwan — on writing, identity, systems, and things clients don't pay him to think about.">
+  <PhotoHeader src={nightMarket} alt="Indra Irwan at a night market in Kuala Lumpur." eyebrow="Unpaid opinions">
+    <CorrectedHeading
+      variant="light"
+      draft="A content calendar of thought leadership."
+      correction="Nope —"
+      final="Things I think about<br/>when I'm not writing for clients."
+    />
+    <p slot="lead" class="photo-header__lead">
+      No content calendar. No SEO strategy. Just whatever wouldn't leave me alone.
+    </p>
+  </PhotoHeader>
+
+  <CaretMark />
+
+  <section class="container post-list-wrap">
+    <ol class="post-list">
+      {posts.map((post) => (
+        <li class="reveal">
+          <a href={`/blog/${post.slug}`} class="post-item">
+            <time class="post-item__date" datetime={post.data.date}>{formatDate(post.data.date)}</time>
+            <span class="post-item__title">{post.data.title}</span>
+            {post.data.description && <span class="post-item__dek">{post.data.description}</span>}
+          </a>
+        </li>
+      ))}
+    </ol>
+
+    <div class="sticker-layer">
+      <PhotoSticker
+        src={stickerTram}
+        alt=""
+        rotate={-6}
+        width="8rem"
+        aspect="4 / 5"
+        objectPosition="55% 35%"
+        style="right:-8.75rem; top:4%;"
+      />
+      <Scribble kind="arrow" rotate={165} size="2.75rem" style="right:-4.5rem; top:35%;" />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .post-list-wrap {
+    position: relative;
+  }
+  .post-list {
+    list-style: none;
+    margin: 0 0 5rem;
+    padding: 0;
+    border-top: 1px solid var(--color-line);
+  }
+  .post-item {
+    display: grid;
+    grid-template-columns: 11rem 1fr;
+    gap: 0.5rem 2rem;
+    padding-block: 1.5rem;
+    border-bottom: 1px solid var(--color-line);
+    text-decoration: none;
+    color: var(--color-text);
+  }
+  .post-item__date {
+    font-family: var(--font-accent);
+    font-size: 0.78rem;
+    color: var(--color-mark);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding-top: 0.2rem;
+  }
+  .post-item__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  }
+  .post-item__dek {
+    grid-column: 2 / 3;
+    color: var(--color-text-soft);
+    font-size: 0.95rem;
+    max-width: 60ch;
+  }
+  .post-item:hover .post-item__title { color: var(--color-mark); }
+
+  @media (max-width: 640px) {
+    .post-item { grid-template-columns: 1fr; }
+    .post-item__dek { grid-column: 1 / 2; }
+  }
+</style>

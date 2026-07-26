@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CorrectedHeading from '../components/CorrectedHeading.astro';
+import ParallaxImage from '../components/ParallaxImage.astro';
+import PhotoSticker from '../components/PhotoSticker.astro';
+import PhotoCutout from '../components/PhotoCutout.astro';
+import WordScribble from '../components/WordScribble.astro';
+import RansomLetters from '../components/RansomLetters.astro';
+import CaretMark from '../components/CaretMark.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import heroPhoto from '../assets/photos/hero-stairwell.jpg';
+import stickerNeonface from '../assets/photos/sticker-neonface.jpg';
+
+const entries = [
+  { n: '01', href: '/about', label: 'About', dek: 'The unedited version.' },
+  { n: '02', href: '/services', label: 'Services', dek: 'What I actually do.' },
+  { n: '03', href: '/blog', label: 'Blog', dek: 'Unpaid opinions.' },
+  { n: '04', href: '/podcast', label: 'Podcast', dek: 'Three minutes, no brief.' },
+  { n: '05', href: '/courses', label: 'Courses', dek: 'Coming soon.' },
+  { n: '06', href: '/contact', label: 'Contact', dek: 'Open for notes.' },
+];
+---
+<BaseLayout title="Home" description="Indra Irwan — Advertising Creative, Writer, and Wellness Guide, across Malaysia, Singapore, and SEA.">
+  <section class="hero container">
+    <div class="hero__copy">
+      <Eyebrow text="Not a pitch deck" />
+      <CorrectedHeading
+        size="large"
+        draft="Brand strategist and content consultant with 10+ years of experience."
+        correction="Actually — I help people find meaning."
+        final="WORDS. MEANING.<br/>CLARITY."
+      />
+      <p class="hero__sub reveal">
+        Whether I'm architecting a brand strategy or leading a mindfulness session, my goal is to help
+        you find resonance in a world full of noise.
+      </p>
+      <div class="hero__actions reveal">
+        <a href="/services" class="btn btn-primary">See what I do</a>
+        <a href="/blog" class="btn">Read the blog</a>
+      </div>
+    </div>
+    <div class="hero__photo reveal-scale">
+      <ParallaxImage src={heroPhoto} alt="Indra Irwan, mid-stride on a stairwell in Kuala Lumpur." aspect="4 / 5" priority={true} />
+    </div>
+
+    <div class="sticker-layer">
+      <PhotoCutout
+        file="cutout-pole"
+        rotate={-8}
+        width="7rem"
+        style="left:-7.75rem; top:0;"
+      />
+      <RansomLetters word="INDRA" size="1.3rem" rotate={-4} maxWidth="10rem" style="left:-11rem; top:10rem;" />
+    </div>
+  </section>
+
+  <CaretMark />
+
+  <section class="container index-section">
+    <Eyebrow text="Where to next" />
+    <h2 class="index-section__heading reveal">Pick a page. Or don&rsquo;t — the marquee downstairs will find you eventually.</h2>
+    <ul class="index-list">
+      {entries.map((e) => (
+        <li class="reveal">
+          <a href={e.href} class="index-item">
+            <span class="index-item__n">{e.n}</span>
+            <span class="index-item__label">{e.label}</span>
+            <span class="index-item__dek">{e.dek}</span>
+            <span class="index-item__arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <div class="sticker-layer">
+      <PhotoSticker
+        src={stickerNeonface}
+        alt=""
+        rotate={7}
+        width="8.5rem"
+        aspect="4 / 5"
+        objectPosition="50% 20%"
+        style="right:-9.25rem; top:1.5rem;"
+      />
+      <WordScribble text="just say it" rotate={-4} size="1.5rem" style="right:-11.5rem; bottom:2.5rem;" />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+    padding-block: clamp(2.5rem, 6vw, 5rem);
+  }
+  .hero__sub {
+    max-width: 46ch;
+    font-size: 1.05rem;
+    color: var(--color-text-soft);
+    margin-top: 1.75rem;
+  }
+  .hero__actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+  .hero__photo {
+    border: 1px solid var(--color-line);
+  }
+
+  .index-section {
+    position: relative;
+    padding-block: clamp(2rem, 5vw, 4rem) clamp(3rem, 8vw, 6rem);
+  }
+  .index-section__heading {
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    max-width: 30ch;
+    margin-bottom: 2.5rem;
+  }
+  .index-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--color-line);
+  }
+  .index-item {
+    display: grid;
+    grid-template-columns: 3rem 10rem 1fr auto;
+    align-items: center;
+    gap: 1.5rem;
+    padding-block: 1.4rem;
+    border-bottom: 1px solid var(--color-line);
+    text-decoration: none;
+    color: var(--color-text);
+  }
+  .index-item__n {
+    font-family: var(--font-accent);
+    color: var(--color-mark);
+    font-size: 0.9rem;
+  }
+  .index-item__label {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+  }
+  .index-item__dek {
+    color: var(--color-text-soft);
+    font-size: 0.95rem;
+  }
+  .index-item__arrow {
+    font-family: var(--font-accent);
+    color: var(--color-mark);
+    transform: translateX(0);
+    transition: transform 0.25s var(--ease-editorial);
+  }
+  .index-item:hover .index-item__arrow {
+    transform: translateX(6px);
+  }
+  .index-item:hover .index-item__label {
+    color: var(--color-mark);
+  }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero__photo { order: -1; max-width: 22rem; margin-inline: auto; }
+    .index-item {
+      grid-template-columns: 2.4rem 1fr auto;
+      row-gap: 0.35rem;
+    }
+    .index-item__dek {
+      grid-column: 2 / 3;
+    }
+  }
+</style>

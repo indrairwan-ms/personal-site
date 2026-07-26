@@ -1,0 +1,65 @@
+---
+// A handwritten word or two, in the same red-pen voice as the rest of the
+// site's marks -- either a stray aside ("just say it") or a live correction
+// (a word struck through, replaced by a better one above it).
+interface Props {
+  text: string;
+  replace?: string;
+  rotate?: number;
+  size?: string;
+  style?: string;
+}
+const { text, replace, rotate = -3, size = '1.4rem', style: extraStyle = '' } = Astro.props;
+---
+<span
+  class={`word-scribble reveal-target ${replace ? 'word-scribble--correction' : ''}`}
+  data-mark
+  style={`--rotate: ${rotate}deg; --size: ${size}; ${extraStyle}`}
+  aria-hidden="true"
+>
+  {!replace && <span class="word-scribble__text">{text}</span>}
+  {replace && <span class="word-scribble__replace">{replace}</span>}
+  {replace && <span class="word-scribble__struck">{text}</span>}
+</span>
+
+<style>
+  .word-scribble {
+    display: inline-block;
+    font-family: var(--font-hand);
+    font-weight: 600;
+    font-size: var(--size);
+    color: var(--color-mark);
+    line-height: 1.1;
+    transform: rotate(var(--rotate));
+    opacity: 0;
+    transition: opacity 0.5s var(--ease-editorial), transform 0.5s var(--ease-editorial);
+    white-space: nowrap;
+  }
+  .word-scribble.in-view {
+    opacity: 1;
+  }
+  .word-scribble--correction {
+    display: grid;
+    justify-items: start;
+    gap: 0.1em;
+  }
+  .word-scribble__struck {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 0.62em;
+    color: var(--color-text-soft);
+    text-decoration: line-through;
+    text-decoration-color: var(--color-mark);
+    text-decoration-thickness: 0.08em;
+    transform: rotate(1deg);
+  }
+  .word-scribble__replace {
+    transform: rotate(-2deg);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .word-scribble {
+      opacity: 1 !important;
+      transition: none !important;
+    }
+  }
+</style>

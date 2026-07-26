@@ -1,0 +1,45 @@
+---
+// Silhouette cutout with a white sticker-style outline (background removed,
+// baked-in stroke) -- the counterpart to PhotoSticker's polaroid treatment.
+// Source is a pre-processed static PNG in /public/cutouts, not astro:assets,
+// since it's already a final flattened asset.
+interface Props {
+  file: string;
+  alt?: string;
+  rotate?: number;
+  width?: string;
+  style?: string;
+  class?: string;
+}
+const {
+  file,
+  alt = '',
+  rotate = 0,
+  width = '8rem',
+  style: positionStyle = '',
+  class: className = '',
+} = Astro.props;
+---
+<div
+  class={`photo-cutout ${className}`}
+  style={`--rotate: ${rotate}deg; --w: ${width}; ${positionStyle}`}
+>
+  <img src={`/cutouts/${file}.png`} alt={alt} loading="lazy" aria-hidden={alt === '' ? 'true' : undefined} />
+</div>
+
+<style>
+  .photo-cutout {
+    width: var(--w);
+    filter: drop-shadow(0 12px 20px rgba(22, 20, 18, 0.28));
+    transform: rotate(var(--rotate));
+    transition: transform 0.35s var(--ease-editorial);
+  }
+  .photo-cutout:hover {
+    transform: rotate(0deg) scale(1.05);
+  }
+  .photo-cutout img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+</style>

@@ -1,0 +1,72 @@
+---
+// Magazine-cutout letters, ransom-note style -- each letter its own scrap of
+// paper, different "clipping" per letter (font, tone, angle), one letter in
+// the site's red as the accent. Used to spell short, relevant words.
+interface Props {
+  word: string;
+  size?: string;
+  rotate?: number;
+  maxWidth?: string;
+  style?: string;
+}
+const { word, size = '1.6rem', rotate = 0, maxWidth = '11rem', style: extraStyle = '' } = Astro.props;
+
+const fonts = ['var(--font-display)', 'var(--font-body)', 'Georgia, serif'];
+const papers = ['#fdfdfa', '#f3efe4', '#fbf6e9'];
+const letters = word.split('').map((ch, i) => ({
+  ch,
+  rot: (((i * 47) % 21) - 10),
+  font: fonts[i % fonts.length],
+  paper: papers[(i * 2) % papers.length],
+  accent: word.length > 2 && i === Math.floor(word.length / 2),
+}));
+---
+<span
+  class="ransom-word reveal-target"
+  data-mark
+  style={`--rotate: ${rotate}deg; --size: ${size}; --max-w: ${maxWidth}; ${extraStyle}`}
+  aria-hidden="true"
+>
+  {letters.map((l) => (
+    <span
+      class="ransom-letter"
+      style={`--r: ${l.rot}deg; font-family: ${l.font}; background: ${l.paper}; ${l.accent ? 'color: var(--color-mark);' : ''}`}
+    >
+      {l.ch}
+    </span>
+  ))}
+</span>
+
+<style>
+  .ransom-word {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: var(--max-w);
+    transform: rotate(var(--rotate));
+    opacity: 0;
+    transform-origin: center;
+    transition: opacity 0.5s var(--ease-editorial), transform 0.5s var(--ease-editorial);
+  }
+  .ransom-word.in-view {
+    opacity: 1;
+  }
+  .ransom-letter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--size);
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--color-text);
+    padding: 0.15em 0.28em;
+    margin-inline: 0.03em;
+    box-shadow: 0 2px 5px rgba(22, 20, 18, 0.22);
+    transform: rotate(var(--r));
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ransom-word {
+      opacity: 1 !important;
+      transition: none !important;
+    }
+  }
+</style>

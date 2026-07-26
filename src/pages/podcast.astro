@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CaretMark from '../components/CaretMark.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import CorrectedHeading from '../components/CorrectedHeading.astro';
+import ParallaxImage from '../components/ParallaxImage.astro';
+import PhotoSticker from '../components/PhotoSticker.astro';
+import PhotoCutout from '../components/PhotoCutout.astro';
+import Scribble from '../components/Scribble.astro';
+import tunnelPhoto from '../assets/photos/tunnel.jpg';
+import stickerNeonface from '../assets/photos/sticker-neonface.jpg';
+---
+<BaseLayout title="Podcast" description="Manifest — a short guided visualisation podcast by Indra Irwan. Listen on Spotify.">
+  <section class="container podcast-hero">
+    <div class="podcast-hero__copy">
+      <Eyebrow text="Manifest" />
+      <CorrectedHeading
+        draft="A branded content series."
+        correction="Just —"
+        final="Take a minute to meditate<br/>and manifest the life you desire."
+      />
+      <p class="reveal podcast-hero__lead">Listen to my podcast series.</p>
+      <a href="https://open.spotify.com/show/23omOqjHYsYvmVzncs37tr" class="btn btn-primary reveal" target="_blank" rel="noopener noreferrer">
+        Listen on Spotify
+      </a>
+    </div>
+    <div class="podcast-hero__photo reveal-scale">
+      <ParallaxImage src={tunnelPhoto} alt="Indra Irwan standing in a tunnel, watching traffic pass." aspect="4 / 5" />
+    </div>
+
+    <div class="sticker-layer">
+      <PhotoCutout
+        file="cutout-obj-mic"
+        rotate={-6}
+        width="6.5rem"
+        style="left:-7.25rem; top:2rem;"
+      />
+    </div>
+  </section>
+
+  <CaretMark />
+
+  <section class="container podcast-embed-wrap">
+    <div class="podcast-embed reveal">
+      <iframe
+        style="border-radius:0"
+        src="https://open.spotify.com/embed/show/23omOqjHYsYvmVzncs37tr?utm_source=generator&theme=0"
+        width="100%"
+        height="352"
+        frameborder="0"
+        allowfullscreen
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+        title="Manifest podcast — Spotify player"
+      ></iframe>
+    </div>
+
+    <div class="sticker-layer">
+      <PhotoSticker
+        src={stickerNeonface}
+        alt=""
+        rotate={8}
+        width="7.5rem"
+        aspect="4 / 5"
+        objectPosition="50% 20%"
+        style="left:51rem; top:1rem;"
+      />
+      <Scribble kind="arrow" rotate={158} size="2.5rem" style="left:47.5rem; top:8rem;" />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .podcast-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+    padding-block: clamp(2.5rem, 6vw, 5rem);
+  }
+  .podcast-hero__lead {
+    margin-top: 1.25rem;
+    max-width: 46ch;
+    color: var(--color-text-soft);
+    font-size: 1.05rem;
+  }
+  .podcast-hero__photo { border: 1px solid var(--color-line); }
+  .podcast-hero .btn { margin-top: 1.75rem; }
+
+  .podcast-embed-wrap {
+    position: relative;
+    padding-bottom: clamp(3rem, 7vw, 5rem);
+  }
+  .podcast-embed {
+    border: 1px solid var(--color-line);
+    max-width: 46rem;
+  }
+
+  @media (max-width: 860px) {
+    .podcast-hero { grid-template-columns: 1fr; }
+    .podcast-hero__photo { order: -1; max-width: 20rem; margin-inline: auto; }
+  }
+</style>
