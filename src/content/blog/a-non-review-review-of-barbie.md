@@ -1,17 +1,16 @@
 ---
-title: "A Non-Review Review Of Barbie"
-date: "2023-09-12"
-description: "How a fun movie can be deceptively philosophical."
+title: A Non-Review Review Of Barbie
+date: 2023-09-12
+description: How a fun movie can be deceptively philosophical.
 ---
-
 ## I
 
-It's been some time since the Barbie movie was released. By now, there is already a lot of discourse about it. I am not, by any means, a movie reviewer so I shall not comment on the technical aspects of the movie. I'll just say, that I think it had a lot of heart. While I am not interested in writing a full review about the movie, I do feel compelled to talk about one of its themes. On the surface, the movie was about structural systems. Feminism, patriarchy, capitalism - the works. They even mentioned fascism twice! But in my opinion, at the very core, the movie is about purpose, personhood, and self-awareness.
+It's been some time since the Barbie movie was released. By now, there is already a lot of discourse about it. I am not, by any means, a movie reviewer so I shall not comment on the technical aspects of the movie. I'll just have to say, that I think it had a lot of heart. While I am not interested in writing a full review about the movie, I do feel compelled to talk about one of its themes. On the surface, the movie was about structural systems. Feminism, patriarchy, capitalism - the works. They even mentioned fascism twice! But in my opinion, at the very core, the movie is about purpose, personhood, and self-awareness.
 
 ## II
 
 > "I want to be a part of the people that make meaning, not the thing that's made"
->
+> 
 > — Barbie
 
 Barbie's dilemma was about finding who she wanted to be. Her preconditioned state - perhaps an allegory to how most of us are socialised to behave according to the systems we are in - was no longer giving her joy. In a world that is hyper-fixated on joy, anything else feels like a disability. What do we do when we feel broken? We turn to our friends, our companions, our maker(s) - just anyone who can make us feel whole again.
@@ -21,7 +20,7 @@ As Barbie goes on an adventure to be fixed, she realises that she actually wants
 ## III
 
 > "Yeah, because actually my job, it's just Beach."
->
+> 
 > — Ken
 
 Ken's struggle is finding where he fits into everything. Traditionally, the idea of masculinity (i.e. what it means to be a man) has always been tied to physical attributes, sexual conquests, and career. When none of it brought satisfaction or meaning to Ken, it created frustration. He did everything right, but why didn't he get the reward? So, he turned to patriarchy - a system meant to prop up some and subjugate others. Indeed, power over your peers can create a euphoria similar to satisfaction, but ultimately it is devoid of true meaning. Ken will always feel empty until he learns to be his own person, detached from his occupation, relationships, the image he presents, and even the outcomes he craves.
@@ -29,7 +28,7 @@ Ken's struggle is finding where he fits into everything. Traditionally, the idea
 ## IV
 
 > You have to never get old, never be rude, never show off, never be selfish, never fall down, never fail, never show fear, never get out of line. It's too hard! It's too contradictory and nobody gives you a medal or says thank you! And it turns out in fact that not only are you doing everything wrong, but also everything is your fault.
->
+> 
 > — Gloria
 
 While Gloria (the character played by America Ferrera) represents the everyday woman, she also reflects modern living. Isn't living in the 21st century about conforming to homogeneity and standards? So, feeling different or wanting to go against the grain becomes a scary thought. You become afraid of your own thoughts and desires because you fear judgment. Your awareness of your true self feels like a curse as you'd rather be like everyone else. But that true self is so strong that you can't possibly deny it. So every day feels like a struggle to just be "normal".
