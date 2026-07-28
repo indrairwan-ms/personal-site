@@ -5,7 +5,7 @@ description: How a fun movie can be deceptively philosophical.
 ---
 ## I
 
-It's been some time since the Barbie movie was released. By now, there is already a lot of discourse about it. I am not, by any means, a movie reviewer so I shall not comment on the technical aspects of the movie. I'll just have to say, that I think it had a lot of heart. While I am not interested in writing a full review about the movie, I do feel compelled to talk about one of its themes. On the surface, the movie was about structural systems. Feminism, patriarchy, capitalism - the works. They even mentioned fascism twice! But in my opinion, at the very core, the movie is about purpose, personhood, and self-awareness.
+It's been some time since the Barbie movie was released. By now, there is already a lot of discourse about it. I am not, by any means, a movie reviewer so I shall not comment on the technical aspects of the movie. I'll just say, that I think it had a lot of heart. While I am not interested in writing a full review about the movie, I do feel compelled to talk about one of its themes. On the surface, the movie was about structural systems. Feminism, patriarchy, capitalism - the works. They even mentioned fascism twice! But in my opinion, at the very core, the movie is about purpose, personhood, and self-awareness.
 
 ## II
 
