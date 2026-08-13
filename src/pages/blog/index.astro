@@ -1,9 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PhotoHeader from '../../components/PhotoHeader.astro';
+import ParallaxImage from '../../components/ParallaxImage.astro';
 import CaretMark from '../../components/CaretMark.astro';
 import CorrectedHeading from '../../components/CorrectedHeading.astro';
+import Eyebrow from '../../components/Eyebrow.astro';
 import PhotoSticker from '../../components/PhotoSticker.astro';
 import Scribble from '../../components/Scribble.astro';
 import nightMarket from '../../assets/photos/night-market.jpg';
@@ -18,18 +19,23 @@ function formatDate(d: Date) {
 }
 ---
 <BaseLayout title="Blog" description="Personal essays and opinions by Indra Irwan on culture, belief, identity, and the world as he sees it.">
-  <PhotoHeader src={nightMarket} alt="Indra Irwan at a night market in Kuala Lumpur." eyebrow="Personal opinions">
-    <CorrectedHeading
-      variant="light"
-      draft="Thought leadership content"
-      correction="Not quite"
-      final="Where the thinking goes<br/>beyond the job."
-    />
-    <p slot="lead" class="photo-header__lead reveal-after-heading">
-      Essays on the things I sit with, long and hard. On culture, belief, identity, and the world at
-      large.
-    </p>
-  </PhotoHeader>
+  <section class="container blog-hero">
+    <div class="blog-hero__copy">
+      <Eyebrow text="Personal opinions" />
+      <CorrectedHeading
+        draft="Thought leadership content"
+        correction="Not quite"
+        final="Where the thinking goes<br/>beyond the job."
+      />
+      <p class="reveal-after-heading blog-hero__lead">
+        Essays on the things I sit with, long and hard. On culture, belief, identity, and the world at
+        large.
+      </p>
+    </div>
+    <div class="blog-hero__photo reveal-scale">
+      <ParallaxImage src={nightMarket} alt="Indra Irwan at a night market in Kuala Lumpur." aspect="4 / 5" priority={true} />
+    </div>
+  </section>
 
   <CaretMark />
 
@@ -62,6 +68,21 @@ function formatDate(d: Date) {
 </BaseLayout>
 
 <style>
+  .blog-hero {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+    padding-block: clamp(2.5rem, 6vw, 5rem);
+  }
+  .blog-hero__lead {
+    margin-top: 1.5rem;
+    font-size: 1.05rem;
+    color: var(--color-text-soft);
+    max-width: 46ch;
+  }
+  .blog-hero__photo { border: 1px solid var(--color-line); }
+
   .post-list-wrap {
     position: relative;
   }
@@ -101,6 +122,10 @@ function formatDate(d: Date) {
   }
   .post-item:hover .post-item__title { color: var(--color-mark); }
 
+  @media (max-width: 860px) {
+    .blog-hero { grid-template-columns: 1fr; }
+    .blog-hero__photo { order: -1; max-width: 20rem; margin-inline: auto; }
+  }
   @media (max-width: 640px) {
     .post-item { grid-template-columns: 1fr; }
     .post-item__dek { grid-column: 1 / 2; }

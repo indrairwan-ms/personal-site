@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PhotoHeader from '../components/PhotoHeader.astro';
+import ParallaxImage from '../components/ParallaxImage.astro';
 import CaretMark from '../components/CaretMark.astro';
 import CorrectedHeading from '../components/CorrectedHeading.astro';
 import CircleMark from '../components/CircleMark.astro';
@@ -8,7 +8,7 @@ import Eyebrow from '../components/Eyebrow.astro';
 import PhotoSticker from '../components/PhotoSticker.astro';
 import PhotoCutout from '../components/PhotoCutout.astro';
 import RansomLetters from '../components/RansomLetters.astro';
-import flowerShop from '../assets/photos/flower-shop.jpg';
+import graffitiPole from '../assets/photos/graffiti-pole.jpg';
 import stickerWalking from '../assets/photos/sticker-walking.jpg';
 
 const categories = [
@@ -35,18 +35,23 @@ const categories = [
 ];
 ---
 <BaseLayout title="Contact" description="Get in touch with Indra Irwan for copywriting, creative strategy, or mindfulness sessions. Available for projects locally and internationally.">
-  <PhotoHeader src={flowerShop} alt="Indra Irwan standing outside a flower shop at night." eyebrow="Get in touch">
-    <CorrectedHeading
-      variant="light"
-      draft="Schedule a consultation"
-      correction="Scratch that"
-      final="Let&rsquo;s chat or grab a coffee"
-    />
-    <p slot="lead" class="photo-header__lead reveal-after-heading">
-      If you're nearby, let's actually get coffee or tea. Your choice, my treat. If not, we can always
-      chat online or get on a call.
-    </p>
-  </PhotoHeader>
+  <section class="container contact-hero">
+    <div class="contact-hero__copy">
+      <Eyebrow text="Get in touch" />
+      <CorrectedHeading
+        draft="Schedule a consultation"
+        correction="Scratch that"
+        final="Let&rsquo;s chat or grab a coffee"
+      />
+      <p class="reveal-after-heading contact-hero__lead">
+        If you're nearby, let's actually get coffee or tea. Your choice, my treat. If not, we can always
+        chat online or get on a call.
+      </p>
+    </div>
+    <div class="contact-hero__photo reveal-scale">
+      <ParallaxImage src={graffitiPole} alt="Indra Irwan leaning against a graffiti-marked pole at night." aspect="4 / 5" priority={true} />
+    </div>
+  </section>
 
   <CaretMark />
 
@@ -130,6 +135,21 @@ const categories = [
 </BaseLayout>
 
 <style>
+  .contact-hero {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+    padding-block: clamp(2.5rem, 6vw, 5rem);
+  }
+  .contact-hero__lead {
+    margin-top: 1.5rem;
+    font-size: 1.05rem;
+    color: var(--color-text-soft);
+    max-width: 46ch;
+  }
+  .contact-hero__photo { border: 1px solid var(--color-line); }
+
   .contact {
     position: relative;
     display: grid;
@@ -257,6 +277,8 @@ const categories = [
   }
 
   @media (max-width: 860px) {
+    .contact-hero { grid-template-columns: 1fr; }
+    .contact-hero__photo { order: -1; max-width: 20rem; margin-inline: auto; }
     .contact { grid-template-columns: 1fr; }
   }
   @media (max-width: 480px) {
@@ -266,31 +288,44 @@ const categories = [
 
 <script>
   const buttons = document.querySelectorAll<HTMLButtonElement>('.category-btn');
+  const picker = document.getElementById('category-picker');
   const collapse = document.getElementById('contact-form-collapse');
   const categoryInput = document.getElementById('category') as HTMLInputElement | null;
   const selectedText = document.getElementById('contact-form-selected');
   const messageLabel = document.getElementById('message-label');
   const nameInput = document.getElementById('name') as HTMLInputElement | null;
 
+  function selectCategory(btn: HTMLButtonElement, focusName: boolean) {
+    buttons.forEach((b) => b.classList.remove('is-selected'));
+    btn.classList.add('is-selected');
+
+    const category = btn.dataset.category || '';
+    const prompt = btn.dataset.prompt || "What's the brief?";
+
+    if (categoryInput) categoryInput.value = category;
+    if (selectedText) selectedText.textContent = `Reaching out about: ${category}`;
+    if (messageLabel) messageLabel.textContent = prompt;
+
+    const wasOpen = collapse?.classList.contains('is-open');
+    collapse?.classList.add('is-open');
+    if (!wasOpen && focusName) {
+      setTimeout(() => nameInput?.focus(), 400);
+    }
+  }
+
   buttons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      buttons.forEach((b) => b.classList.remove('is-selected'));
-      btn.classList.add('is-selected');
-
-      const category = btn.dataset.category || '';
-      const prompt = btn.dataset.prompt || "What's the brief?";
-
-      if (categoryInput) categoryInput.value = category;
-      if (selectedText) selectedText.textContent = `Reaching out about: ${category}`;
-      if (messageLabel) messageLabel.textContent = prompt;
-
-      const wasOpen = collapse?.classList.contains('is-open');
-      collapse?.classList.add('is-open');
-      if (!wasOpen) {
-        setTimeout(() => nameInput?.focus(), 400);
-      }
-    });
+    btn.addEventListener('click', () => selectCategory(btn, true));
   });
+
+  // Deep-link support, e.g. /contact?topic=Copywriting from the Services page CTAs.
+  const topic = new URLSearchParams(window.location.search).get('topic');
+  if (topic) {
+    const match = Array.from(buttons).find((b) => b.dataset.category === topic);
+    if (match) {
+      selectCategory(match, false);
+      picker?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 
   // No backend is wired up yet — this opens a pre-filled email to Indra so the form
   // works today regardless of hosting. Swap for Netlify Forms / Formspree once the
