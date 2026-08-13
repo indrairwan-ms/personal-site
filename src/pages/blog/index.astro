@@ -17,16 +17,17 @@ function formatDate(d: Date) {
   return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 }
 ---
-<BaseLayout title="Blog" description="Unpaid opinions from Indra Irwan — on writing, identity, systems, and things clients don't pay him to think about.">
-  <PhotoHeader src={nightMarket} alt="Indra Irwan at a night market in Kuala Lumpur." eyebrow="Unpaid opinions">
+<BaseLayout title="Blog" description="Personal essays and opinions by Indra Irwan on culture, belief, identity, and the world as he sees it.">
+  <PhotoHeader src={nightMarket} alt="Indra Irwan at a night market in Kuala Lumpur." eyebrow="Personal opinions">
     <CorrectedHeading
       variant="light"
-      draft="A content calendar of thought leadership."
-      correction="Nope —"
-      final="Things I think about<br/>when I'm not writing for clients."
+      draft="Thought leadership content"
+      correction="Not quite"
+      final="Where the thinking goes<br/>beyond the job."
     />
     <p slot="lead" class="photo-header__lead">
-      No content calendar. No SEO strategy. Just whatever wouldn't leave me alone.
+      Essays on the things I sit with, long and hard. On culture, belief, identity, and the world at
+      large.
     </p>
   </PhotoHeader>
 

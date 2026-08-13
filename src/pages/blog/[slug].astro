@@ -24,7 +24,7 @@ function formatDate(d: Date) {
 <BaseLayout title={post.data.title} description={post.data.description || undefined}>
   <article class="container post">
     <header class="post__header">
-      <Eyebrow text="Unpaid opinions" />
+      <Eyebrow text="Personal opinions" />
       <h1 class="reveal">{post.data.title}</h1>
       <p class="post__meta reveal">
         <time datetime={post.data.date.toISOString().slice(0, 10)}>{formatDate(post.data.date)}</time> &middot; Indra Irwan
