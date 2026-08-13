@@ -9,6 +9,7 @@ import PhotoSticker from '../components/PhotoSticker.astro';
 import PhotoCutout from '../components/PhotoCutout.astro';
 import WordScribble from '../components/WordScribble.astro';
 import HighlightMark from '../components/HighlightMark.astro';
+import UnderlineMark from '../components/UnderlineMark.astro';
 import portrait from '../assets/photos/about-portrait.jpg';
 import stickerOptical from '../assets/photos/sticker-optical.jpg';
 ---
@@ -27,6 +28,8 @@ import stickerOptical from '../assets/photos/sticker-optical.jpg';
     </div>
     <div class="about-hero__photo reveal-scale">
       <ParallaxImage src={portrait} alt="Portrait of Indra Irwan, leaning against a wall." aspect="4 / 5" priority={true} />
+      <PhotoCutout file="cutout-cage" rotate={5} width="5rem" class="hero-sticker hero-sticker--a" />
+      <PhotoCutout file="cutout-obj-camera" rotate={-7} width="5.5rem" class="hero-sticker hero-sticker--b" />
     </div>
   </section>
 
@@ -38,8 +41,8 @@ import stickerOptical from '../assets/photos/sticker-optical.jpg';
         <HighlightMark>For more than 15 years, I&rsquo;ve sought to integrate commerce and the human experience.</HighlightMark>
       </p>
       <p>
-        In that time, I have crafted campaigns for global brands including Apple, Grab, foodpanda,
-        Nestle, and Toyota. The kind of work that&rsquo;s taught me a campaign can do more than move
+        In that time, I have crafted campaigns for global brands including <UnderlineMark>Apple, Grab, foodpanda,
+        Nestle, and Toyota.</UnderlineMark> The kind of work that&rsquo;s taught me a campaign can do more than move
         product, if you let it. No matter the role I play, that&rsquo;s the perspective I bring. Be it
         consulting for a business, writing about the world we live in, or practicing mindfulness, the
         goal is always the same: to make something honest enough to actually mean something more.
@@ -92,7 +95,7 @@ import stickerOptical from '../assets/photos/sticker-optical.jpg';
 
   <section class="container about-cta-wrap">
     <div class="about-cta reveal">
-      <p>Want the fifteen-year version, with the receipts?</p>
+      <p>Want the fifteen-year version, with the <HighlightMark>receipts?</HighlightMark></p>
       <a href="/indra-irwan-profile.pdf" class="btn btn-primary">Download my profile</a>
     </div>
   </section>
@@ -112,7 +115,12 @@ import stickerOptical from '../assets/photos/sticker-optical.jpg';
     color: var(--color-text-soft);
     max-width: 42ch;
   }
-  .about-hero__photo { border: 1px solid var(--color-line); }
+  .about-hero__photo { position: relative; width: 100%; border: 1px solid var(--color-line); }
+  :global(.hero-sticker) {
+    position: absolute;
+  }
+  :global(.hero-sticker--a) { left: -1rem; bottom: -1rem; }
+  :global(.hero-sticker--b) { right: -1rem; bottom: 2.5rem; }
 
   .about-body {
     position: relative;
@@ -128,10 +136,9 @@ import stickerOptical from '../assets/photos/sticker-optical.jpg';
     padding-top: 2rem;
     border-top: 1px solid var(--color-line);
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
   }
   .about-cta p {
     font-family: var(--font-display);
@@ -163,5 +170,7 @@ import stickerOptical from '../assets/photos/sticker-optical.jpg';
   @media (max-width: 860px) {
     .about-hero { grid-template-columns: 1fr; }
     .about-hero__photo { order: -1; max-width: 20rem; margin-inline: auto; }
+    :global(.hero-sticker--a) { left: -0.25rem; bottom: -0.5rem; width: 3.75rem !important; }
+    :global(.hero-sticker--b) { right: -0.25rem; bottom: 1.5rem; width: 4rem !important; }
   }
 </style>

@@ -17,6 +17,11 @@
     position: relative;
     display: inline-block;
     padding: 0.3em 0.7em;
+    /* This mark is only designed for a short single-line phrase (see note above) --
+       the encircling SVG is absolutely positioned against the whole box, so if the
+       content were ever long enough to wrap, the circle would misdraw around just
+       the last line instead of the full phrase. */
+    white-space: nowrap;
   }
   .circle-mark__svg {
     /* Generous clearance -- the path is a hand-drawn wobble, not a true ellipse,

@@ -26,6 +26,8 @@ import stickerNeonface from '../assets/photos/sticker-neonface.jpg';
     </div>
     <div class="podcast-hero__photo reveal-scale">
       <ParallaxImage src={tunnelPhoto} alt="Indra Irwan standing in a tunnel, watching traffic pass." aspect="4 / 5" />
+      <PhotoCutout file="cutout-new-tunnel-b" rotate={-4} width="5rem" class="hero-sticker hero-sticker--a" />
+      <PhotoCutout file="cutout-obj-cassette" rotate={-8} width="4.5rem" class="hero-sticker hero-sticker--b" />
     </div>
 
     <div class="sticker-layer">
@@ -85,7 +87,12 @@ import stickerNeonface from '../assets/photos/sticker-neonface.jpg';
     color: var(--color-text-soft);
     font-size: 1.05rem;
   }
-  .podcast-hero__photo { border: 1px solid var(--color-line); }
+  .podcast-hero__photo { position: relative; width: 100%; border: 1px solid var(--color-line); }
+  :global(.hero-sticker) {
+    position: absolute;
+  }
+  :global(.hero-sticker--a) { right: -1rem; top: -1rem; }
+  :global(.hero-sticker--b) { right: -1rem; bottom: -0.5rem; }
   .podcast-hero .btn { margin-top: 1.75rem; }
 
   .podcast-embed-wrap {
@@ -100,5 +107,7 @@ import stickerNeonface from '../assets/photos/sticker-neonface.jpg';
   @media (max-width: 860px) {
     .podcast-hero { grid-template-columns: 1fr; }
     .podcast-hero__photo { order: -1; max-width: 20rem; margin-inline: auto; }
+    :global(.hero-sticker--a) { right: -0.25rem; top: -0.5rem; width: 3.75rem !important; }
+    :global(.hero-sticker--b) { right: -0.25rem; bottom: -0.5rem; width: 3.25rem !important; }
   }
 </style>

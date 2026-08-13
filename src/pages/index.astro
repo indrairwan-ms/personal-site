@@ -8,6 +8,7 @@ import WordScribble from '../components/WordScribble.astro';
 import RansomLetters from '../components/RansomLetters.astro';
 import CaretMark from '../components/CaretMark.astro';
 import Eyebrow from '../components/Eyebrow.astro';
+import HighlightMark from '../components/HighlightMark.astro';
 import heroPhoto from '../assets/photos/hero-stairwell.jpg';
 import stickerNeonface from '../assets/photos/sticker-neonface.jpg';
 
@@ -32,7 +33,7 @@ const entries = [
       />
       <p class="hero__sub reveal-after-heading">
         I craft words. I find meaning through strategy. I guide towards clarity through mindfulness.
-        Three different exercises, all with the same intention: to bring out what's true.
+        Three different exercises, all with the same intention: <HighlightMark>to bring out what&rsquo;s true.</HighlightMark>
       </p>
       <div class="hero__actions reveal-after-heading">
         <a href="/services" class="btn btn-primary">See what I do</a>
@@ -41,6 +42,8 @@ const entries = [
     </div>
     <div class="hero__photo reveal-scale">
       <ParallaxImage src={heroPhoto} alt="Indra Irwan, mid-stride on a stairwell in Kuala Lumpur." aspect="4 / 5" priority={true} />
+      <PhotoCutout file="cutout-new-dabao" rotate={-5} width="5rem" class="hero-sticker hero-sticker--a" />
+      <PhotoCutout file="cutout-obj-boombox" rotate={6} width="5.5rem" class="hero-sticker hero-sticker--b" />
     </div>
 
     <div class="sticker-layer">
@@ -109,8 +112,15 @@ const entries = [
     flex-wrap: wrap;
   }
   .hero__photo {
+    position: relative;
+    width: 100%;
     border: 1px solid var(--color-line);
   }
+  :global(.hero-sticker) {
+    position: absolute;
+  }
+  :global(.hero-sticker--a) { left: -1rem; bottom: -1rem; }
+  :global(.hero-sticker--b) { right: -1rem; bottom: -1rem; }
 
   .index-section {
     position: relative;
@@ -138,9 +148,16 @@ const entries = [
     color: var(--color-text);
   }
   .index-item__n {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--color-mark);
     font-family: var(--font-accent);
-    color: var(--color-mark);
-    font-size: 0.9rem;
+    color: var(--color-base);
+    font-size: 0.8rem;
   }
   .index-item__label {
     font-family: var(--font-display);
@@ -167,6 +184,8 @@ const entries = [
   @media (max-width: 860px) {
     .hero { grid-template-columns: 1fr; }
     .hero__photo { order: -1; max-width: 22rem; margin-inline: auto; }
+    :global(.hero-sticker--a) { left: -0.25rem; bottom: -0.5rem; width: 3.75rem !important; }
+    :global(.hero-sticker--b) { right: -0.25rem; bottom: -0.5rem; width: 4rem !important; }
     .index-item {
       grid-template-columns: 2.4rem 1fr auto;
       row-gap: 0.35rem;

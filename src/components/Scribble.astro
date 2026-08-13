@@ -6,7 +6,7 @@
 // The "arrow" kind's native direction (rotate=0) points up-and-right;
 // use `rotate` to aim it at an actual nearby target, not decoratively.
 interface Props {
-  kind?: 'check' | 'squiggle' | 'squiggle-long' | 'spark' | 'arrow' | 'question' | 'circle';
+  kind?: 'check' | 'squiggle' | 'squiggle-long' | 'spark' | 'arrow' | 'question' | 'circle' | 'star';
   size?: string;
   rotate?: number;
   style?: string;
@@ -28,6 +28,7 @@ const paths: Record<string, string> = {
   arrow: 'M3,20 C14,8 26,6 37,9 M28,4 L37,9 L33,19',
   question: 'M8,10 C8,3 15,1 20,4 C25,7 25,14 19,17 C16,19 16,21 16,24 M16,31 L16.5,31',
   circle: 'M20,4 C31,3 37,11 36,20 C35,30 26,36 16,35 C6,34 2,25 4,16 C6,7 13,4 20,4 Z',
+  star: 'M20,2 L25,15 L39,16 L28,25 L32,39 L20,31 L8,39 L12,25 L1,16 L15,15 Z',
 };
 const viewBoxes: Record<string, string> = {
   check: '0 0 40 28',
@@ -37,6 +38,7 @@ const viewBoxes: Record<string, string> = {
   arrow: '0 0 40 24',
   question: '0 0 32 34',
   circle: '0 0 40 40',
+  star: '0 0 40 40',
 };
 ---
 <span

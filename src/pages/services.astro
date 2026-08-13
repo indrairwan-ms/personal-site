@@ -6,27 +6,32 @@ import CorrectedHeading from '../components/CorrectedHeading.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 import PhotoCutout from '../components/PhotoCutout.astro';
 import Scribble from '../components/Scribble.astro';
+import HighlightMark from '../components/HighlightMark.astro';
+import UnderlineMark from '../components/UnderlineMark.astro';
 import neonPhoto from '../assets/photos/neon.jpg';
 
 const categories = [
   {
     n: '01',
     title: 'Copywriting',
-    body: "Whether it's a 30-second script or social content hooks, I write copy, scripts, and campaign lines that feel right for the moment. Working in both English and Bahasa Malaysia, I go beyond writing, translating, editing, and proofreading. I figure out what you should really be saying, so it actually talks to your audience and not just at them.",
+    body: "Whether it's a 30-second script or social content hooks, I write copy, scripts, and campaign lines that feel right for the moment. Working in both English and Bahasa Malaysia, I go beyond writing, translating, editing, and proofreading. I figure out what you should really be saying, so it actually ",
+    bodyMark: 'talks to your audience and not just at them.',
     tags: ['Campaign & Traditional Copy', 'Social Media Copy', 'English & BM Adaptation', 'Edit & Proofread'],
     cta: 'Send Me a Brief',
   },
   {
     n: '02',
     title: 'Creative Strategy',
-    body: "Everything worth acting on starts with a strategy. I help brands figure out what to say and where, including campaign ideation, positioning, and digital and content strategy. When that thinking needs to reach a whole team, that's where my creative leadership comes in.",
+    body: "Everything worth acting on starts with a strategy. I help brands figure out what to say and where, including campaign ideation, positioning, and digital and content strategy. When that thinking needs to reach a whole team, that's where my ",
+    bodyMark: 'creative leadership comes in.',
     tags: ['Brand Strategy', 'Campaign Ideation', 'Creative Direction', 'Workshop Facilitation'],
     cta: "Let's Start Planning",
   },
   {
     n: '03',
     title: 'Wellness',
-    body: "When you or your team needs clarity, I run mindfulness sessions built around it. It's the same kind of attention I bring to a brief, where together we sit with intention until what's underneath rises to the surface.",
+    body: "When you or your team needs clarity, I run mindfulness sessions built around it. It's the same kind of attention I bring to a brief, where together we sit with intention until ",
+    bodyMark: "what's underneath rises to the surface.",
     tags: ['Mindfulness & Reflection', '1:1 Sessions', 'Group Workshops', 'In-Person & Virtual'],
     cta: 'Come Breathe With Me',
   },
@@ -43,11 +48,13 @@ const categories = [
       />
       <p class="reveal-after-heading services-hero__lead">
         Different problems need different tools. Sometimes that's a headline, or a strategy deck. Other
-        times, you just need a guided quiet time. I can help with any one, or all of them.
+        times, you just need a guided quiet time. I can help with <HighlightMark>any one, or all of them.</HighlightMark>
       </p>
     </div>
     <div class="services-hero__photo reveal-scale">
       <ParallaxImage src={neonPhoto} alt="Indra Irwan lit by a neon sign at night." aspect="4 / 5" priority={true} />
+      <PhotoCutout file="cutout-walking" rotate={-5} width="5rem" class="hero-sticker hero-sticker--a" />
+      <PhotoCutout file="cutout-obj-clapperboard" rotate={10} width="4.5rem" class="hero-sticker hero-sticker--b" />
     </div>
   </section>
 
@@ -58,7 +65,7 @@ const categories = [
       <div class="category reveal">
         <span class="category__n">{c.n}</span>
         <h2 class="category__title">{c.title}</h2>
-        <p class="category__body">{c.body}</p>
+        <p class="category__body">{c.body}<UnderlineMark>{c.bodyMark}</UnderlineMark></p>
         <ul class="category__tags">
           {c.tags.map((t) => <li>{t}</li>)}
         </ul>
@@ -108,7 +115,12 @@ const categories = [
     color: var(--color-text-soft);
     max-width: 46ch;
   }
-  .services-hero__photo { border: 1px solid var(--color-line); }
+  .services-hero__photo { position: relative; width: 100%; border: 1px solid var(--color-line); }
+  :global(.hero-sticker) {
+    position: absolute;
+  }
+  :global(.hero-sticker--a) { left: -1rem; bottom: -1rem; z-index: 2; }
+  :global(.hero-sticker--b) { left: 2.75rem; bottom: 1.25rem; z-index: 1; }
 
   .categories {
     display: grid;
@@ -179,6 +191,8 @@ const categories = [
   @media (max-width: 860px) {
     .services-hero { grid-template-columns: 1fr; }
     .services-hero__photo { order: -1; max-width: 20rem; margin-inline: auto; }
+    :global(.hero-sticker--a) { left: -0.25rem; bottom: -0.5rem; width: 3.75rem !important; }
+    :global(.hero-sticker--b) { left: 2.25rem; bottom: 1rem; width: 3.25rem !important; }
     .categories { grid-template-columns: 1fr; }
   }
 </style>

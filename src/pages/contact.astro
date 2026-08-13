@@ -4,6 +4,7 @@ import ParallaxImage from '../components/ParallaxImage.astro';
 import CaretMark from '../components/CaretMark.astro';
 import CorrectedHeading from '../components/CorrectedHeading.astro';
 import CircleMark from '../components/CircleMark.astro';
+import UnderlineMark from '../components/UnderlineMark.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 import PhotoSticker from '../components/PhotoSticker.astro';
 import PhotoCutout from '../components/PhotoCutout.astro';
@@ -44,12 +45,14 @@ const categories = [
         final="Let&rsquo;s chat or grab a coffee"
       />
       <p class="reveal-after-heading contact-hero__lead">
-        If you're nearby, let's actually get coffee or tea. Your choice, my treat. If not, we can always
+        If you're nearby, let's actually get coffee or tea. <UnderlineMark>Your choice, my treat.</UnderlineMark> If not, we can always
         chat online or get on a call.
       </p>
     </div>
     <div class="contact-hero__photo reveal-scale">
       <ParallaxImage src={graffitiPole} alt="Indra Irwan leaning against a graffiti-marked pole at night." aspect="4 / 5" priority={true} />
+      <PhotoCutout file="cutout-garst" rotate={-5} width="5rem" class="hero-sticker hero-sticker--a" />
+      <PhotoCutout file="cutout-obj-vhs-stack" rotate={7} width="5rem" class="hero-sticker hero-sticker--b" />
     </div>
   </section>
 
@@ -148,7 +151,12 @@ const categories = [
     color: var(--color-text-soft);
     max-width: 46ch;
   }
-  .contact-hero__photo { border: 1px solid var(--color-line); }
+  .contact-hero__photo { position: relative; width: 100%; border: 1px solid var(--color-line); }
+  :global(.hero-sticker) {
+    position: absolute;
+  }
+  :global(.hero-sticker--a) { left: -1rem; bottom: -1rem; }
+  :global(.hero-sticker--b) { right: -1rem; bottom: -1rem; }
 
   .contact {
     position: relative;
@@ -279,6 +287,8 @@ const categories = [
   @media (max-width: 860px) {
     .contact-hero { grid-template-columns: 1fr; }
     .contact-hero__photo { order: -1; max-width: 20rem; margin-inline: auto; }
+    :global(.hero-sticker--a) { left: -0.25rem; bottom: -0.5rem; width: 3.75rem !important; }
+    :global(.hero-sticker--b) { right: -0.25rem; bottom: -0.5rem; width: 3.5rem !important; }
     .contact { grid-template-columns: 1fr; }
   }
   @media (max-width: 480px) {

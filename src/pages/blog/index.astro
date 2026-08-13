@@ -2,10 +2,12 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ParallaxImage from '../../components/ParallaxImage.astro';
+import PhotoCutout from '../../components/PhotoCutout.astro';
 import CaretMark from '../../components/CaretMark.astro';
 import CorrectedHeading from '../../components/CorrectedHeading.astro';
 import Eyebrow from '../../components/Eyebrow.astro';
 import PhotoSticker from '../../components/PhotoSticker.astro';
+import HighlightMark from '../../components/HighlightMark.astro';
 import nightMarket from '../../assets/photos/night-market.jpg';
 import stickerTram from '../../assets/photos/sticker-tram.jpg';
 
@@ -28,12 +30,14 @@ function formatDate(d: Date) {
         final="Where the thinking goes<br/>beyond the job."
       />
       <p class="reveal-after-heading blog-hero__lead">
-        Essays on the things I sit with, long and hard. On culture, belief, identity, and the world at
+        Essays on the things I sit with, <HighlightMark>long and hard.</HighlightMark> On culture, belief, identity, and the world at
         large.
       </p>
     </div>
     <div class="blog-hero__photo reveal-scale">
       <ParallaxImage src={nightMarket} alt="Indra Irwan at a night market in Kuala Lumpur." aspect="4 / 5" priority={true} />
+      <PhotoCutout file="cutout-new-dabao-b" rotate={-5} width="5rem" class="hero-sticker hero-sticker--a" />
+      <PhotoCutout file="cutout-obj-sneakers" rotate={6} width="5.5rem" class="hero-sticker hero-sticker--b" />
     </div>
   </section>
 
@@ -94,7 +98,12 @@ function formatDate(d: Date) {
     color: var(--color-text-soft);
     max-width: 46ch;
   }
-  .blog-hero__photo { border: 1px solid var(--color-line); }
+  .blog-hero__photo { position: relative; width: 100%; border: 1px solid var(--color-line); }
+  :global(.hero-sticker) {
+    position: absolute;
+  }
+  :global(.hero-sticker--a) { left: -1rem; bottom: -1rem; }
+  :global(.hero-sticker--b) { right: -1rem; bottom: -1rem; }
 
   .latest-post {
     padding-block: 0 clamp(1.5rem, 4vw, 2.5rem);
@@ -184,6 +193,8 @@ function formatDate(d: Date) {
   @media (max-width: 860px) {
     .blog-hero { grid-template-columns: 1fr; }
     .blog-hero__photo { order: -1; max-width: 20rem; margin-inline: auto; }
+    :global(.hero-sticker--a) { left: -0.25rem; bottom: -0.5rem; width: 3.75rem !important; }
+    :global(.hero-sticker--b) { right: -0.25rem; bottom: -0.5rem; width: 4rem !important; }
   }
   @media (max-width: 640px) {
     .post-item { grid-template-columns: 1fr; }
