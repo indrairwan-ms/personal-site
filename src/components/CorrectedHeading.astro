@@ -40,20 +40,14 @@ const { draft, correction, final, tag: Tag = 'h1', variant = 'dark', size = 'com
   .corrected--compact .corrected__draft { font-size: clamp(0.85rem, 1.3vw, 1.05rem); }
 
   .corrected__draft-text {
-    position: relative;
-    display: inline-block;
+    text-decoration-line: line-through;
+    text-decoration-color: transparent;
+    text-decoration-thickness: 2px;
+    transition: text-decoration-color 0.55s var(--ease-editorial);
   }
-  .corrected__draft-text::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 52%;
-    width: 0%;
-    height: 2px;
-    background: var(--color-mark);
-    transition: width 0.55s var(--ease-editorial);
+  .corrected.step-1 .corrected__draft-text {
+    text-decoration-color: var(--color-mark);
   }
-  .corrected.step-1 .corrected__draft-text::after { width: 100%; }
 
   .corrected__correction {
     font-family: var(--font-hand);
@@ -78,10 +72,6 @@ const { draft, correction, final, tag: Tag = 'h1', variant = 'dark', size = 'com
   .corrected--large .corrected__final { font-size: clamp(2.6rem, 6.5vw, 5.2rem); }
   .corrected--compact .corrected__final { font-size: clamp(2.2rem, 5.5vw, 3.8rem); }
 
-  .corrected.step-3 .corrected__draft {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
   .corrected.step-3 .corrected__final {
     opacity: 1;
     transform: translateY(0);
@@ -108,8 +98,8 @@ const { draft, correction, final, tag: Tag = 'h1', variant = 'dark', size = 'com
       return;
     }
     const steps = ['step-1', 'step-2', 'step-3'];
-    const delays = [500, 900, 1000];
-    let total = 300;
+    const delays = [300, 450, 450];
+    let total = 150;
     steps.forEach((cls, i) => {
       total += delays[i];
       setTimeout(() => el.classList.add(cls), total);
