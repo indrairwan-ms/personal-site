@@ -10,32 +10,22 @@ const year = new Date().getFullYear();
     </div>
   </div>
 
-  <div class="container site-footer__grid">
-    <div>
-      <p class="eyebrow">Open for a chat</p>
-      <p class="site-footer__lead">Got a brief, a mess, or a half-formed idea? Let&rsquo;s discuss it.</p>
-      <a href="/contact" class="btn btn-primary" style="margin-top:1rem;">Get in touch</a>
-    </div>
-    <div class="site-footer__links">
-      <div>
-        <p class="site-footer__heading">Find your way</p>
-        <ul>
-          <li><a href="/about">About</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/podcast">Podcast</a></li>
-          <li><a href="/courses">Courses</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="site-footer__heading">Direct line</p>
-        <ul>
-          <li><a href="mailto:indrairwan.ms@gmail.com">indrairwan.ms@gmail.com</a></li>
-          <li><a href="tel:+60162933073">+60 16-293 3073</a></li>
-          <li><a href="/indra-irwan-profile.pdf">Download profile (PDF)</a></li>
-        </ul>
-      </div>
-    </div>
+  <div class="container site-footer__links">
+    <p class="site-footer__heading">Find your way</p>
+    <p class="site-footer__heading">Direct line</p>
+    <ul>
+      <li><a href="/about">About</a></li>
+      <li><a href="/services">Services</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/podcast">Podcast</a></li>
+      <li><a href="/courses">Courses</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+    <ul>
+      <li><a href="mailto:indrairwan.ms@gmail.com">indrairwan.ms@gmail.com</a></li>
+      <li><a href="tel:+60162933073">+60 16-293 3073</a></li>
+      <li><a href="/indra-irwan-profile.pdf">Download profile (PDF)</a></li>
+    </ul>
   </div>
 
   <div class="container site-footer__bottom">
@@ -46,13 +36,13 @@ const year = new Date().getFullYear();
 <style>
   .site-footer {
     margin-top: clamp(4rem, 10vw, 7rem);
-    border-top: 1px solid var(--color-line);
-    background: var(--color-base);
+    background: var(--color-text);
+    color: var(--color-base);
   }
   .marquee {
     overflow: hidden;
-    border-bottom: 1px solid var(--color-line);
-    padding-block: 0.85rem;
+    border-bottom: 1px solid rgba(247, 247, 244, 0.14);
+    padding-block: 0.55rem;
     -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
     mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
   }
@@ -65,7 +55,7 @@ const year = new Date().getFullYear();
     font-family: var(--font-accent);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    font-size: 0.85rem;
+    font-size: 0.72rem;
     white-space: nowrap;
     padding-right: 0;
   }
@@ -80,53 +70,53 @@ const year = new Date().getFullYear();
     .marquee__track { animation: none; }
   }
 
-  .site-footer__grid {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: clamp(2rem, 6vw, 5rem);
-    padding-block: clamp(3rem, 7vw, 5rem);
-  }
-  .site-footer__lead {
-    font-family: var(--font-display);
-    font-size: clamp(1.3rem, 2.2vw, 1.8rem);
-    max-width: 22ch;
-  }
   .site-footer__links {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    grid-template-rows: auto auto;
+    column-gap: 1.75rem;
+    padding-block: clamp(1.75rem, 3.5vw, 2.5rem);
   }
   .site-footer__heading {
     font-family: var(--font-accent);
     text-transform: uppercase;
-    font-size: 0.78rem;
+    font-size: 0.66rem;
     letter-spacing: 0.1em;
-    color: var(--color-text-soft);
-    margin: 0 0 0.9rem;
+    color: rgba(247, 247, 244, 0.45);
+    margin: 0 0 0.65rem;
   }
   .site-footer__links ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: grid;
-    gap: 0.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 0.3rem;
+  }
+  .site-footer__links li:not(:last-child)::after {
+    content: '\00b7';
+    margin-inline: 0.5em;
+    color: rgba(247, 247, 244, 0.3);
   }
   .site-footer__links a {
+    font-size: 0.85rem;
     text-decoration: none;
     border-bottom: 1px solid transparent;
+    white-space: nowrap;
   }
   .site-footer__links a:hover {
     border-bottom-color: var(--color-mark);
     color: var(--color-mark);
   }
   .site-footer__bottom {
-    border-top: 1px solid var(--color-line);
-    padding-block: 1.25rem;
-    font-size: 0.8rem;
-    color: var(--color-text-soft);
+    border-top: 1px solid rgba(247, 247, 244, 0.14);
+    padding-block: 0.75rem;
+    font-size: 0.7rem;
+    color: rgba(247, 247, 244, 0.45);
   }
 
   @media (max-width: 720px) {
-    .site-footer__grid { grid-template-columns: 1fr; }
+    .site-footer__links { column-gap: 1rem; padding-block: 1.25rem; }
+    .site-footer__links a { white-space: normal; }
   }
 </style>
