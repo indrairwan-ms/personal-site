@@ -30,11 +30,17 @@ const { draft, correction, final, tag: Tag = 'h1', variant = 'dark', size = 'com
     font-family: var(--font-body);
     color: var(--color-text-soft);
     margin: 0 0 0.6rem;
+    opacity: 0;
+    transform: translateY(10px);
     transition: opacity 0.5s var(--ease-editorial), transform 0.5s var(--ease-editorial);
     display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.55em;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3em;
+  }
+  .corrected.step-0 .corrected__draft {
+    opacity: 1;
+    transform: translateY(0);
   }
   .corrected--large .corrected__draft { font-size: clamp(1rem, 2vw, 1.25rem); }
   .corrected--compact .corrected__draft { font-size: clamp(0.85rem, 1.3vw, 1.05rem); }
@@ -97,9 +103,9 @@ const { draft, correction, final, tag: Tag = 'h1', variant = 'dark', size = 'com
       el.classList.add('reduced');
       return;
     }
-    const steps = ['step-1', 'step-2', 'step-3'];
-    const delays = [300, 450, 450];
-    let total = 150;
+    const steps = ['step-0', 'step-1', 'step-2', 'step-3'];
+    const delays = [150, 300, 450, 450];
+    let total = 0;
     steps.forEach((cls, i) => {
       total += delays[i];
       setTimeout(() => el.classList.add(cls), total);

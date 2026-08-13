@@ -8,16 +8,17 @@ import LogoTicker from '../components/LogoTicker.astro';
 import PhotoSticker from '../components/PhotoSticker.astro';
 import PhotoCutout from '../components/PhotoCutout.astro';
 import WordScribble from '../components/WordScribble.astro';
+import HighlightMark from '../components/HighlightMark.astro';
 import portrait from '../assets/photos/about-portrait.jpg';
 import stickerOptical from '../assets/photos/sticker-optical.jpg';
 ---
 <BaseLayout title="About" description="15+ years in advertising across SEA, and what led to caring more about meaning than the marketplace.">
   <section class="container about-hero">
     <div class="about-hero__copy">
-      <Eyebrow text="The unedited version" />
+      <Eyebrow text="The Real Version" />
       <CorrectedHeading
         draft="Advertising Creative with 15+ years of experience."
-        correction="Actually, let me start over —"
+        correction="Let me start over"
         final="I grew up in the city but lived a kampung lifestyle."
       />
       <p class="reveal-after-heading about-hero__lead">
@@ -34,7 +35,7 @@ import stickerOptical from '../assets/photos/sticker-optical.jpg';
   <section class="container about-body">
     <div class="about-body__text reveal">
       <p>
-        For more than 15 years, I&rsquo;ve sought to integrate commerce and human experience.
+        <HighlightMark>For more than 15 years, I&rsquo;ve sought to integrate commerce and the human experience.</HighlightMark>
       </p>
       <p>
         In that time, I have crafted campaigns for global brands including Apple, Grab, foodpanda,
@@ -103,7 +104,7 @@ import stickerOptical from '../assets/photos/sticker-optical.jpg';
     grid-template-columns: 1.1fr 0.9fr;
     gap: clamp(2rem, 5vw, 4rem);
     align-items: center;
-    padding-block: clamp(2.5rem, 6vw, 5rem);
+    padding-block: clamp(2.5rem, 6vw, 5rem) clamp(0.95rem, 2.35vw, 1.42rem);
   }
   .about-hero__lead {
     margin-top: 1.5rem;
@@ -146,7 +147,6 @@ import stickerOptical from '../assets/photos/sticker-optical.jpg';
     padding-block: clamp(2.5rem, 6vw, 4rem);
   }
   .clients__lead {
-    max-width: 52ch;
     color: var(--color-text-soft);
     font-size: 1.05rem;
     margin: 1.25rem 0 2rem;

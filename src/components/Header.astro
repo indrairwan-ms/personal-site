@@ -11,8 +11,9 @@ const path = Astro.url.pathname;
 ---
 <header class="site-header">
   <div class="container site-header__row">
-    <a href="/" class="site-header__mark" aria-label="Indra Irwan — home">
-      Indra Irwan<span class="site-header__caret">^</span>
+    <a href="/" class="site-header__mark" aria-label="I Am Indra — home">
+      <img src="/favicon.png" alt="" class="site-header__logo" width="536" height="540" />
+      I Am Indra<span class="site-header__caret">^</span>
     </a>
     <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">
       <span>Menu</span>
@@ -46,12 +47,19 @@ const path = Astro.url.pathname;
     padding-block: 1.1rem;
   }
   .site-header__mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 1.15rem;
     text-decoration: none;
     color: var(--color-text);
     letter-spacing: -0.01em;
+  }
+  .site-header__logo {
+    height: 1.5rem;
+    width: auto;
   }
   .site-header__caret {
     color: var(--color-mark);

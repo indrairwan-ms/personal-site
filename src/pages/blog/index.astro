@@ -6,13 +6,13 @@ import CaretMark from '../../components/CaretMark.astro';
 import CorrectedHeading from '../../components/CorrectedHeading.astro';
 import Eyebrow from '../../components/Eyebrow.astro';
 import PhotoSticker from '../../components/PhotoSticker.astro';
-import Scribble from '../../components/Scribble.astro';
 import nightMarket from '../../assets/photos/night-market.jpg';
 import stickerTram from '../../assets/photos/sticker-tram.jpg';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
+const [latestPost, ...olderPosts] = posts;
 
 function formatDate(d: Date) {
   return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -39,9 +39,23 @@ function formatDate(d: Date) {
 
   <CaretMark />
 
+  {latestPost && (
+    <section class="container latest-post">
+      <Eyebrow text="Read my latest post" />
+      <a href={`/blog/${latestPost.slug}`} class="latest-post__card reveal">
+        <span class="latest-post__title">{latestPost.data.title}</span>
+        {latestPost.data.description && <span class="latest-post__dek">{latestPost.data.description}</span>}
+        <span class="latest-post__meta">
+          <time datetime={latestPost.data.date.toISOString().slice(0, 10)}>{formatDate(latestPost.data.date)}</time>
+          <span class="latest-post__arrow" aria-hidden="true">&rarr;</span>
+        </span>
+      </a>
+    </section>
+  )}
+
   <section class="container post-list-wrap">
     <ol class="post-list">
-      {posts.map((post) => (
+      {olderPosts.map((post) => (
         <li class="reveal">
           <a href={`/blog/${post.slug}`} class="post-item">
             <time class="post-item__date" datetime={post.data.date.toISOString().slice(0, 10)}>{formatDate(post.data.date)}</time>
@@ -62,7 +76,6 @@ function formatDate(d: Date) {
         objectPosition="55% 35%"
         style="right:-8.75rem; top:4%;"
       />
-      <Scribble kind="arrow" rotate={165} size="2.75rem" style="right:-4.5rem; top:35%;" />
     </div>
   </section>
 </BaseLayout>
@@ -73,7 +86,7 @@ function formatDate(d: Date) {
     grid-template-columns: 1.15fr 0.85fr;
     gap: clamp(2rem, 5vw, 4rem);
     align-items: center;
-    padding-block: clamp(2.5rem, 6vw, 5rem);
+    padding-block: clamp(2.5rem, 6vw, 5rem) clamp(0.95rem, 2.35vw, 1.42rem);
   }
   .blog-hero__lead {
     margin-top: 1.5rem;
@@ -82,6 +95,52 @@ function formatDate(d: Date) {
     max-width: 46ch;
   }
   .blog-hero__photo { border: 1px solid var(--color-line); }
+
+  .latest-post {
+    padding-block: 0 clamp(1.5rem, 4vw, 2.5rem);
+  }
+  .latest-post__card {
+    display: block;
+    border: 1.5px solid var(--color-mark);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: background 0.2s var(--ease-editorial);
+  }
+  .latest-post__card:hover {
+    background: rgba(var(--color-mark-rgb), 0.06);
+  }
+  .latest-post__title {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+  }
+  .latest-post__dek {
+    display: block;
+    margin-top: 0.75rem;
+    color: var(--color-text-soft);
+    font-size: 1rem;
+    max-width: 60ch;
+  }
+  .latest-post__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    font-family: var(--font-accent);
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    color: var(--color-mark);
+  }
+  .latest-post__arrow {
+    font-family: var(--font-accent);
+    transition: transform 0.25s var(--ease-editorial);
+  }
+  .latest-post__card:hover .latest-post__arrow {
+    transform: translateX(6px);
+  }
 
   .post-list-wrap {
     position: relative;

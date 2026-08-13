@@ -20,6 +20,7 @@
 
   --ease-editorial: cubic-bezier(0.4, 0, 0.2, 1);
   --dur-reveal: 0.8s;
+  --dur-caret: 0.35s;
 }
 
 /* ---------------------------------------------------------------
@@ -73,6 +74,7 @@ p:last-child { margin-bottom: 0; }
   letter-spacing: 0.12em;
   color: var(--color-mark);
   margin: 0 0 1rem;
+  white-space: nowrap;
 }
 .eyebrow::before {
   content: '';
@@ -106,7 +108,7 @@ p:last-child { margin-bottom: 0; }
 .caret-mark {
   display: flex;
   justify-content: center;
-  margin-block: clamp(2.5rem, 6vw, 5rem);
+  margin-block: clamp(2.5rem, 6vw, 5rem) clamp(2.375rem, 5.7vw, 4.75rem);
   color: var(--color-mark);
 }
 .caret-mark svg {
@@ -122,7 +124,7 @@ p:last-child { margin-bottom: 0; }
   stroke-linejoin: round;
   stroke-dasharray: 40;
   stroke-dashoffset: 40;
-  transition: stroke-dashoffset var(--dur-reveal) var(--ease-editorial);
+  transition: stroke-dashoffset var(--dur-caret) var(--ease-editorial);
 }
 .caret-mark.in-view path {
   stroke-dashoffset: 0;
