@@ -3,8 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ParallaxImage from '../components/ParallaxImage.astro';
 import CaretMark from '../components/CaretMark.astro';
 import CorrectedHeading from '../components/CorrectedHeading.astro';
-import UnderlineMark from '../components/UnderlineMark.astro';
-import HighlightMark from '../components/HighlightMark.astro';
 import Eyebrow from '../components/Eyebrow.astro';
 import LogoTicker from '../components/LogoTicker.astro';
 import PhotoSticker from '../components/PhotoSticker.astro';
@@ -13,18 +11,17 @@ import WordScribble from '../components/WordScribble.astro';
 import portrait from '../assets/photos/about-portrait.jpg';
 import stickerOptical from '../assets/photos/sticker-optical.jpg';
 ---
-<BaseLayout title="About" description="Indra Irwan — Advertising Creative, Writer, and Wellness Guide. Not a resume dump.">
+<BaseLayout title="About" description="15+ years in advertising across SEA, and what led to caring more about meaning than the marketplace.">
   <section class="container about-hero">
     <div class="about-hero__copy">
       <Eyebrow text="The unedited version" />
       <CorrectedHeading
-        draft="Advertising Creative with 10+ years of experience."
+        draft="Advertising Creative with 15+ years of experience."
         correction="Actually, let me start over —"
-        final="I grew up in a kampung that happened to be inside a city."
+        final="I grew up in the city but lived a kampung lifestyle."
       />
       <p class="reveal about-hero__lead">
-        Close enough to the culture to write inside it. Far enough outside to notice what everyone
-        else stopped seeing.
+        It&rsquo;s what taught me to consider the impact of every intention and action.
       </p>
     </div>
     <div class="about-hero__photo reveal-scale">
@@ -37,19 +34,14 @@ import stickerOptical from '../assets/photos/sticker-optical.jpg';
   <section class="container about-body">
     <div class="about-body__text reveal">
       <p>
-        For over a decade, I've sought to integrate commerce and human experience. I have crafted
-        campaigns for global brands like Apple, Grab, foodpanda, Nestle, and Toyota, helping them find
-        their voice in a crowded marketplace. Having worked inside the engines of global marketing, I
-        provide a unique perspective on how systems shape our individual identities.
+        For more than 15 years, I&rsquo;ve sought to integrate commerce and human experience.
       </p>
       <p>
-        But after more than 10 years in the industry, I realised that my real work is about
-        <UnderlineMark>reclaiming meaning</UnderlineMark>. Whether I'm consulting for a business or
-        writing about systemic issues, my goal is to help you find balance.
-      </p>
-      <p>
-        Beyond the boardroom, I am a <HighlightMark>wellness enthusiast and mindfulness practitioner</HighlightMark> dedicated to
-        helping people navigate modern life.
+        In that time, I have crafted campaigns for global brands including Apple, Grab, foodpanda,
+        Nestle, and Toyota. The kind of work that&rsquo;s taught me a campaign can do more than move
+        product, if you let it. No matter the role I play, that&rsquo;s the perspective I bring. Be it
+        consulting for a business, writing about the world we live in, or practicing mindfulness, the
+        goal is always the same: to make something honest enough to actually mean something more.
       </p>
     </div>
 
@@ -59,13 +51,8 @@ import stickerOptical from '../assets/photos/sticker-optical.jpg';
 
     <div class="about-body__text reveal">
       <p>
-        I don't perform a curated version of myself for very long — I never liked picture day, and I
-        still don't take many photos of myself. But I've made peace with being seen, on my own terms,
-        when it actually matters. This site is one of those terms.
-      </p>
-      <p>
-        Off the clock, I read more news than is good for me, and think too much about systems, stories,
-        and why people believe the ones they do. Some of it ends up on the <a href="/blog">blog</a>.
+        I can&rsquo;t perform a curated version of myself for very long. So I choose to just be who I
+        am, and I hope I can help you or your brand do the same.
       </p>
     </div>
 
@@ -95,12 +82,11 @@ import stickerOptical from '../assets/photos/sticker-optical.jpg';
     <div class="container">
       <Eyebrow text="Who I've worked with" />
       <p class="clients__lead">
-        Over fifteen years, that's meant working with global names and regional challengers alike —
-        inside agencies, in-house, and everything after.
+        15+ years, across agencies, in-house, and independently. This is what that looks like.
       </p>
     </div>
     <LogoTicker />
-    <p class="clients__note container">Not an exhaustive list.</p>
+    <p class="clients__note container">This is not an exhaustive list.</p>
   </section>
 
   <section class="container about-cta-wrap">

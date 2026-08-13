@@ -1,22 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PhotoHeader from '../components/PhotoHeader.astro';
-import CircleMark from '../components/CircleMark.astro';
+import CorrectedHeading from '../components/CorrectedHeading.astro';
 import PhotoCutout from '../components/PhotoCutout.astro';
 import WordScribble from '../components/WordScribble.astro';
 import inTransit from '../assets/photos/in-transit.jpg';
 ---
-<BaseLayout title="Courses" description="Courses by Indra Irwan — coming soon.">
-  <PhotoHeader src={inTransit} alt="Indra Irwan walking through a corridor, mid-motion." eyebrow="Coming soon">
-    <h1 class="reveal courses-heading">
-      Courses <CircleMark><span class="scribble">coming soon</span></CircleMark>
-    </h1>
+<BaseLayout title="Courses" description="Courses by Indra Irwan. Built with experience, for those looking to be more clear and authentic. Coming soon.">
+  <PhotoHeader src={inTransit} alt="Indra Irwan walking through a corridor, mid-motion." eyebrow="Courses">
+    <CorrectedHeading
+      variant="light"
+      draft="Transform your life in 30 days"
+      correction="Err&hellip;Not really"
+      final="Practices for your writing,<br/>and for you."
+    />
   </PhotoHeader>
 
   <section class="container courses-body">
     <p class="reveal courses-body__text">
-      I'm building a proper home for this — real lessons, on a real platform, not a waitlist form
-      pretending to be content. It'll live here once it's ready.
+      Learn to look at yourself, and what you make, more honestly. Lessons built from years of
+      experience, explained like we're in the same room. Coming soon.
     </p>
     <p class="reveal courses-body__note">
       Want to know when it's ready? <a href="/contact">Tell me to hurry up.</a>
@@ -35,18 +38,6 @@ import inTransit from '../assets/photos/in-transit.jpg';
 </BaseLayout>
 
 <style>
-  .courses-heading {
-    font-size: clamp(2.2rem, 5.5vw, 3.8rem);
-    color: var(--color-base);
-  }
-  .scribble {
-    font-family: var(--font-hand);
-    color: var(--color-mark);
-    font-size: 0.55em;
-    font-weight: 700;
-    display: inline-block;
-    transform: rotate(-3deg);
-  }
   .courses-body {
     position: relative;
     padding-block: clamp(2.5rem, 6vw, 4rem) clamp(6rem, 12vw, 9rem);

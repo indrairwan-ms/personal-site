@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CaretMark from '../components/CaretMark.astro';
 import PhotoHeader from '../components/PhotoHeader.astro';
 import CorrectedHeading from '../components/CorrectedHeading.astro';
-import HighlightMark from '../components/HighlightMark.astro';
 import PhotoCutout from '../components/PhotoCutout.astro';
 import Scribble from '../components/Scribble.astro';
 import neonPhoto from '../assets/photos/neon.jpg';
@@ -11,36 +10,35 @@ import neonPhoto from '../assets/photos/neon.jpg';
 const categories = [
   {
     n: '01',
-    title: 'Copywriter / Creative Group Head',
-    body: 'The craft, and the leadership of it. Headlines, scripts, and campaign lines — in English and Bahasa Malaysia — written to be spoken aloud before they’re ever approved, plus the edit and proofread pass that catches what a sentence is actually trying to say.',
-    tags: ['Idea & Concept', 'Copywriting', 'Edit & Proofread'],
+    title: 'Copywriting',
+    body: "Whether it's a 30-second script or social content hooks, I write copy, scripts, and campaign lines that feel right for the moment. Working in both English and Bahasa Malaysia, I go beyond writing, translating, editing, and proofreading. I figure out what you should really be saying, so it actually talks to your audience and not just at them.",
+    tags: ['Campaign & Traditional Copy', 'Social Media Copy', 'English & BM Adaptation', 'Edit & Proofread'],
   },
   {
     n: '02',
     title: 'Creative Strategy',
-    body: 'Figuring out what a brand should be saying, and why — before anyone starts writing.',
-    tags: ['Strategy'],
+    body: "Everything worth acting on starts with a strategy. I help brands figure out what to say and where, including campaign ideation, positioning, and digital and content strategy. When that thinking needs to reach a whole team, that's where my creative leadership comes in.",
+    tags: ['Brand Strategy', 'Campaign Ideation', 'Creative Direction', 'Workshop Facilitation'],
   },
   {
     n: '03',
     title: 'Wellness',
-    body: 'Mindfulness and clarity work for people, not just brands. Same instinct, different room.',
-    tags: ['Wellness'],
+    body: "When you or your team needs clarity, I run mindfulness sessions built around it. It's the same kind of attention I bring to a brief, where together we sit with intention until what's underneath rises to the surface.",
+    tags: ['Mindfulness & Reflection', '1:1 Sessions', 'Group Workshops', 'In-Person & Virtual'],
   },
 ];
 ---
-<BaseLayout title="Services" description="Content, Strategy, Consultancy, and Wellness Services — for clients including Apple, Grab, foodpanda, Nestle, and Toyota.">
+<BaseLayout title="Services" description="Your one-man team for copywriting, creative strategy, and wellness services.">
   <PhotoHeader src={neonPhoto} alt="Indra Irwan lit by a neon sign at night." eyebrow="What I actually do">
     <CorrectedHeading
       variant="light"
       draft="Full-service creative solutions provider."
       correction="In plain terms —"
-      final="Content, Strategy, Consultancy,<br/>and Wellness Services."
+      final="Writing, Solving Problems,<br/>and Helping You Just Breathe"
     />
     <p slot="lead" class="photo-header__lead">
-      For over a decade I've crafted campaigns for global brands like
-      <HighlightMark>Apple, Grab, foodpanda, Nestle, and Toyota</HighlightMark> — helping them find
-      their voice in a crowded marketplace.
+      Different problems need different tools. Sometimes that's a headline, or a strategy deck. Other
+      times, you just need a guided quiet time. I can help with any one, or all of them.
     </p>
   </PhotoHeader>
 
@@ -61,9 +59,9 @@ const categories = [
 
   <section class="container services-cta reveal">
     <div class="services-cta__block">
-      <p class="services-cta__lead">Find Time to Talk</p>
+      <p class="services-cta__lead">Let's Talk</p>
       <p class="services-cta__body">
-        Have any questions? Let's talk. Contact me to get the answer you need.
+        Have any questions? Contact me to get the answer you need.
       </p>
       <a href="/contact" class="btn btn-primary">Get in touch</a>
     </div>
