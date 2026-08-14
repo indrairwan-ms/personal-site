@@ -1,9 +1,12 @@
 ---
-title: "Deconstructing A System (Part 1: Me Vs We)"
-date: "2026-01-02"
-description: "History is a cycle of rising solidarity and falling individualism. For empires, they don't just collapse from external pressure — they hollow out from within. And now, the stage is set for the next great decline, and reclaiming the collective is our only path forward."
+title: 'Deconstructing A System (Part 1: Me Vs We)'
+date: 2026-01-02
+description: >-
+  History is a cycle of rising solidarity and falling individualism. For
+  empires, they don't just collapse from external pressure — they hollow out
+  from within. And now, the stage is set for the next great decline, and
+  reclaiming the collective is our only path forward.
 ---
-
 ## I: Why Do Empires Collapse
 
 Civilisation is a collective project. It's built when people with shared values and beliefs come together for a common cause. So, logically, the project fails when people no longer believe in social cohesion. Whether it's because people stopped trusting the institutions they built or because they stopped sharing an identity, empires crumble when individualism takes centre stage. People then retreat to narrow, self-interested pursuits.
@@ -16,7 +19,10 @@ During the Song Dynasty, the empire was intellectually and economically vibrant,
 
 The ruling elite of the Malacca Sultanate prioritised personal power and factional rivalries, while wealthy merchants assisted colonisers to protect their private property. Individual greed replaced a commitment to the common good, and left the sultanate defenceless against external threats.
 
-Historian Ibn Khaldun provided a framework called Asabiyyah (social solidarity) explaining how this has repeatedly happened throughout history.
+Historian Ibn Khaldun provided a framework called Asabiyyah (social solidarity) explaining how this has repeatedly happened throughout history:
+
+\
+![](Asabiyyah.webp)
 
 *Sounds familiar?*
 
@@ -25,7 +31,7 @@ Historian Ibn Khaldun provided a framework called Asabiyyah (social solidarity) 
 The Western Enlightenment was sold as the ultimate liberation of the human mind from the shackles of superstition, religious dogma, and monarchical tyranny. Under it, we were promised universal human rights, autonomy, and progress. It shifted the focus from the collective to the self-sovereign individual. Western thinkers such as Thomas Hobbes and John Locke viewed humans as independent units that precede society. This suggests that society is just a transaction or a "contract". Adam Smith's "Invisible Hand" suggested that if everyone pursues their own selfish interests, the whole of society will benefit. Once this idea was bought, selfishness became moralised, even praised. The pursuit of private gain is now a civic virtue.
 
 > "Modern individualism often claims to be liberation, but it quietly eats away at social connections: people chase personal projects, ambitions, and self-expression, yet frequently neglect family, community, or civic responsibilities."
->
+> 
 > — Charles Taylor, "The Ethics of Authenticity"
 
 ## III: The Corporate Engineering Of Hyper-Individualism
