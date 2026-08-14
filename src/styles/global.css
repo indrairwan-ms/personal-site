@@ -40,7 +40,7 @@ body {
      this guarantees that never turns into an unwanted horizontal scrollbar. */
   overflow-x: hidden;
 }
-img, picture, video { max-width: 100%; display: block; }
+img, picture, video { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
 button { font: inherit; }
 
