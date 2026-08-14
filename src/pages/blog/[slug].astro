@@ -21,7 +21,7 @@ function formatDate(d: Date) {
   return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 }
 ---
-<BaseLayout title={post.data.title} description={post.data.description || undefined}>
+<BaseLayout title={post.data.title} description={post.data.description || undefined} type="article" publishedTime={post.data.date}>
   <article class="container post">
     <header class="post__header">
       <Eyebrow text="Personal opinions" />
