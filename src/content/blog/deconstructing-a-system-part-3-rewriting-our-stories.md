@@ -18,7 +18,7 @@ To be fair, individualism does have its merits. It offered us the autonomy to de
 
 The challenge now isn't to return to the rigid systems of the past, but to build a new belonging. Something that preserves our individuality while re-learning the essential art of being responsible for one another.
 
-![](Autonomy+with+Interdependence+\(1600+x+768+px).webp)
+![](./deconstructing-a-system-part-3-rewriting-our-stories/autonomy-with-interdependence-1600x768.webp)
 
 But the question is: how do we course correct?
 
@@ -70,7 +70,7 @@ The work ahead is learning to relate again as *I-Thou*.
 
 Here's a framework that might help get us there.
 
-![](Autonomy+with+Interdependence+\(1600+x+768+px)+(1600+x+1200+px).webp)
+![](./deconstructing-a-system-part-3-rewriting-our-stories/autonomy-with-interdependence-1600x768-1600x1200.webp)
 
 **1. Reclaiming the Self**
 

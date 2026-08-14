@@ -22,7 +22,7 @@ The ruling elite of the Malacca Sultanate prioritised personal power and faction
 Historian Ibn Khaldun provided a framework called Asabiyyah (social solidarity) explaining how this has repeatedly happened throughout history:
 
 \
-![](Asabiyyah.webp)
+![](./deconstructing-a-system-me-vs-we/Asabiyyah.webp)
 
 *Sounds familiar?*
 

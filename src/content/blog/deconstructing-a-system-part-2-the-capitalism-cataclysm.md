@@ -19,7 +19,7 @@ Humans evolved to be around others. The stress of living without a "village" —
 
 When you're constantly under stress, you would naturally look for a remedy. And would you believe it? The system that created the problem is also offering you a solution! Since you are already enmeshed in the preciousness of your individuality, why not seek security in it, too? That's how, in the absence of a tribe, your personal brand becomes your only shield. You feel that if you can just become unique enough, successful enough, or aesthetic enough, you will finally be safe.\
 \
-![](giphy+\(8).gif)
+![](./deconstructing-a-system-part-2-the-capitalism-cataclysm/giphy-8.gif)
 
 How do you do that? How do you become enough of anything? Through the magic of capitalism.
 
@@ -39,7 +39,7 @@ These leaders worked to dismantle unions, social safety nets, and local institut
 
 When the internet age came around, this structure was finalised. Tech platforms and their algorithms perfected the art of keeping us isolated on our devices. We are told we are "brands" and that we need to carve out our niches. Through social media, we are conditioned to compete not just with those closest to us, but also with a global, curated standard of individual success.
 
-![](THE+EVOLUTION+OF+ISOLATION.webp)
+![](./deconstructing-a-system-part-2-the-capitalism-cataclysm/THE+EVOLUTION+OF+ISOLATION.webp)
 
 And, like most magic, it is all an illusion.
 
