@@ -1,9 +1,12 @@
 ---
-title: "Deconstructing A System (Part 2: The Capitalism Cataclysm)"
-date: "2026-01-12"
-description: "A person who belongs to a village is a person who shares; a person who stands alone is a person who must buy everything. From the 16th-century Enclosure Acts to the modern personal brand, discover how capitalism turns our human need for connection into a never-ending shopping cart."
+title: 'Deconstructing A System (Part 2: The Capitalism Cataclysm)'
+date: 2026-01-12
+description: >-
+  A person who belongs to a village is a person who shares; a person who stands
+  alone is a person who must buy everything. From the 16th-century Enclosure
+  Acts to the modern personal brand, discover how capitalism turns our human
+  need for connection into a never-ending shopping cart.
 ---
-
 ## I: The Architecture Of Isolation
 
 Why does the system we live in push us towards hyper-individualism? It is because the system itself is inherently fragile. It is built on principles fundamentally incompatible with a natural way of life. To survive, the system must convince us that we need it more than it needs us. A true community stands in the way of that dependency.
@@ -14,7 +17,9 @@ So, the system began to market our individuality back to us as our most precious
 
 Humans evolved to be around others. The stress of living without a "village" — a group of people you trust and rely on — can be physically, mentally, and emotionally taxing. It can put you in a state of fight-or-flight, triggering your central stress response system. This puts your cortisol levels at a low, chronic and constant simmer, causing you to feel permanently exhausted but unable to truly relax. Your body is stuck in survival mode even when you're just sitting at your desk.
 
-When you're constantly under stress, you would naturally look for a remedy. And would you believe it? The system that created the problem is also offering you a solution! Since you are already enmeshed in the preciousness of your individuality, why not seek security in it, too? That's how, in the absence of a tribe, your personal brand becomes your only shield. You feel that if you can just become unique enough, successful enough, or aesthetic enough, you will finally be safe.
+When you're constantly under stress, you would naturally look for a remedy. And would you believe it? The system that created the problem is also offering you a solution! Since you are already enmeshed in the preciousness of your individuality, why not seek security in it, too? That's how, in the absence of a tribe, your personal brand becomes your only shield. You feel that if you can just become unique enough, successful enough, or aesthetic enough, you will finally be safe.\
+\
+![](giphy+\(8).gif)
 
 How do you do that? How do you become enough of anything? Through the magic of capitalism.
 
@@ -27,12 +32,14 @@ Then, the Industrial Revolution took hold, and the natural way of living was rep
 The most aggressive shift occurred in the late 20th century with the rise of neoliberalism. Leaders like Margaret Thatcher and Richard Nixon championed the notion that the market is the only fair way to organise society.
 
 > "There is no such thing as society. There are individual men and women, and there are families."
->
+> 
 > — Margaret Thatcher
 
 These leaders worked to dismantle unions, social safety nets, and local institutions, ensuring that individuals would have to turn to the market rather than to their neighbours for basic human needs. They even convinced the world to follow suit. By removing the safety net of the "we", the market ensured that the only way to catch ourselves when we fall is to pay for the privilege.
 
 When the internet age came around, this structure was finalised. Tech platforms and their algorithms perfected the art of keeping us isolated on our devices. We are told we are "brands" and that we need to carve out our niches. Through social media, we are conditioned to compete not just with those closest to us, but also with a global, curated standard of individual success.
+
+![](THE+EVOLUTION+OF+ISOLATION.webp)
 
 And, like most magic, it is all an illusion.
 
