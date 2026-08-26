@@ -1,6 +1,13 @@
 ---
 const tickerText = 'INDRA IRWAN — ADVERTISING CREATIVE — WRITER — WELLNESS GUIDE — STRATEGIST — ';
 const year = new Date().getFullYear();
+
+const socialLinks = [
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/indrairwan/' },
+  { name: 'Facebook', href: 'https://www.facebook.com/indrairwan.ms' },
+  { name: 'Instagram', href: 'https://www.instagram.com/iamwhoiamindra' },
+  { name: 'TikTok', href: 'https://www.tiktok.com/@iamwhoiamindra' },
+];
 ---
 <footer class="site-footer">
   <div class="marquee" aria-hidden="true">
@@ -30,6 +37,26 @@ const year = new Date().getFullYear();
 
   <div class="container site-footer__bottom">
     <p>&copy; {year} Indra Irwan.</p>
+    <ul class="site-footer__social">
+      {socialLinks.map((social) => (
+        <li>
+          <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name}>
+            {social.name === 'LinkedIn' && (
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+            )}
+            {social.name === 'Facebook' && (
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.5l.4-3H13.5V8.4c0-.87.24-1.46 1.5-1.46h1.6V4.28C16.3 4.19 15.36 4.1 14.27 4.1c-2.28 0-3.84 1.39-3.84 3.94V10.5H8v3h2.43V21h3.07z"/></svg>
+            )}
+            {social.name === 'Instagram' && (
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 8.7a3.3 3.3 0 1 0 0 6.6 3.3 3.3 0 0 0 0-6.6zm0 5.45a2.15 2.15 0 1 1 0-4.3 2.15 2.15 0 0 1 0 4.3zm4.2-5.58a.77.77 0 1 1-1.54 0 .77.77 0 0 1 1.54 0zM20 8.14c-.05-1.06-.29-2-.9-2.83A4.9 4.9 0 0 0 16.7 4.4c-.83-.32-1.78-.5-2.83-.55C12.83 3.8 12.44 3.8 12 3.8s-.83 0-1.87.05c-1.05.05-2 .23-2.83.55a4.9 4.9 0 0 0-2.4 2.4c-.32.83-.5 1.77-.55 2.82C4.3 10.66 4.3 11.05 4.3 12s0 1.34.05 2.38c.05 1.05.23 1.99.55 2.82.32.83.76 1.6 1.42 2.24.64.66 1.41 1.1 2.24 1.42.83.32 1.78.5 2.83.55 1.04.04 1.43.05 1.87.05s.83 0 1.87-.05c1.05-.05 2-.23 2.83-.55.83-.32 1.6-.76 2.24-1.42a5.5 5.5 0 0 0 1.42-2.24c.32-.83.5-1.77.55-2.82.04-1.04.05-1.43.05-2.38s-.01-1.34-.05-2.38a8.5 8.5 0 0 0-.17-1.48zM18.6 15.3c-.05.9-.19 1.4-.32 1.72a3.07 3.07 0 0 1-1.76 1.76c-.32.13-.82.27-1.72.32-.98.04-1.27.05-3.8.05s-2.82-.01-3.8-.05c-.9-.05-1.4-.19-1.72-.32a2.87 2.87 0 0 1-1.06-.7 2.87 2.87 0 0 1-.7-1.06c-.13-.32-.27-.82-.32-1.72-.04-.98-.05-1.27-.05-3.3s.01-2.32.05-3.3c.05-.9.19-1.4.32-1.72.16-.42.38-.75.7-1.06.31-.32.64-.54 1.06-.7.32-.13.82-.27 1.72-.32.98-.04 1.27-.05 3.8-.05s2.82.01 3.8.05c.9.05 1.4.19 1.72.32.42.16.75.38 1.06.7.32.31.54.64.7 1.06.13.32.27.82.32 1.72.04.98.05 1.27.05 3.3s-.01 2.32-.05 3.3z"/></svg>
+            )}
+            {social.name === 'TikTok' && (
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M16.6 5.82c-.9-.98-1.4-2.26-1.4-3.6h-3.2v13.44c0 1.5-1.22 2.72-2.72 2.72a2.72 2.72 0 0 1-2.72-2.72 2.72 2.72 0 0 1 2.72-2.72c.28 0 .55.04.8.12V9.9a6.03 6.03 0 0 0-.8-.05A5.93 5.93 0 0 0 3.4 15.79 5.93 5.93 0 0 0 9.29 21.7a5.93 5.93 0 0 0 5.9-5.9v-6.8a8.34 8.34 0 0 0 4.87 1.56V7.36a5.03 5.03 0 0 1-3.46-1.54z"/></svg>
+            )}
+          </a>
+        </li>
+      ))}
+    </ul>
   </div>
 </footer>
 
@@ -109,14 +136,35 @@ const year = new Date().getFullYear();
     color: var(--color-mark);
   }
   .site-footer__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
     border-top: 1px solid rgba(247, 247, 244, 0.14);
     padding-block: 0.75rem;
     font-size: 0.7rem;
     color: rgba(247, 247, 244, 0.45);
   }
+  .site-footer__social {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .site-footer__social a {
+    display: flex;
+    color: rgba(247, 247, 244, 0.55);
+    transition: color 0.15s ease;
+  }
+  .site-footer__social a:hover {
+    color: var(--color-mark);
+  }
 
   @media (max-width: 720px) {
     .site-footer__links { column-gap: 1rem; padding-block: 1.25rem; }
     .site-footer__links a { white-space: normal; }
+    .site-footer__bottom { flex-wrap: wrap; justify-content: center; text-align: center; }
   }
 </style>
