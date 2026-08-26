@@ -39,13 +39,25 @@ const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Indra Irwan',
-  alternateName: 'I Am Indra',
+  alternateName: ['I Am Indra', 'Indra Irwan Mohd Sari'],
   url: 'https://www.indrairwan.com',
   image: ogImageUrl,
   jobTitle: 'Advertising Creative, Writer & Wellness Guide',
-  description: 'Indra Irwan — creative strategist and copywriter. Clarity with a little heart.',
+  description: 'Indra Irwan — advertising creative, writer, and wellness guide from Malaysia. Clarity with heart.',
+  nationality: 'Malaysian',
+  homeLocation: {
+    '@type': 'Place',
+    name: 'Petaling Jaya, Selangor, Malaysia',
+  },
   email: 'indrairwan.ms@gmail.com',
   telephone: '+60162933073',
+  sameAs: [
+    'https://www.linkedin.com/in/indrairwan/',
+    'https://www.threads.com/@iamwhoiamindra',
+    'https://www.tiktok.com/@iamwhoiamindra',
+    'https://creativepool.com/indrairwan/about',
+    'https://www.facebook.com/indrairwan.ms/',
+  ],
 };
 ---
 <!doctype html>
