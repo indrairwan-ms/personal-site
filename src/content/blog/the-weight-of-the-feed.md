@@ -34,7 +34,7 @@ Or maybe it’s the algorithmic bubbles that trap us all. I’m in one, so other
 
 Then again, surely they’d have an inkling. The bubbles aren’t perfect. Suffering has a way of eventually seeping into our collective consciousness. In that sense, I think we’ve all lost the privilege of staying oblivious.&nbsp;&nbsp;
 
-## III: Our Survival Instincts
+## III: It's Our Survival Instincts
 
 If all of us, to an extent, *know* what’s happening, why aren’t our reactions bigger?
 
