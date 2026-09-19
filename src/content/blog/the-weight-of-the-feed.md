@@ -36,6 +36,7 @@ Then again, surely they’d have an inkling. The bubbles aren’t perfect. Suffe
 
 ## **III: Our Survival Instincts**
 
+\
 If all of us, to an extent, *know* what’s happening, why aren’t our reactions bigger?
 
 People (like [Ed Sheeran](https://www.fashiontimes.co.uk/ed-sheeran-macklemore-us-tour-gaza-backlash-1764012)) might want to be apolitical and not discuss these issues. It’s hard, it’s messy, and not everyone is equipped to have a conversation about them. Most people are afraid of getting it wrong, and they just don’t want to deal with the criticism.&nbsp;
