@@ -11,7 +11,7 @@ description: >-
 ## **I: The Collapse We’re Seeing**
 
 \
-For the past three years, I’d like to think that I’ve been consistent in posting and sharing about the horrors happening in the world. Sometimes I hesitate, because I fear it’d be seen as me claiming moral superiority. And sometimes I wonder, what’s the point? Everyone seems like they have other things to worry about, while I keep seeing disasters and tragedies.&nbsp;\
+For the past three years, I’d like to think that I’ve been consistent in posting and sharing about the horrors happening in the world. Sometimes I hesitate, because I fear it’d be seen as me claiming moral superiority. And sometimes I wonder, what’s the point? Everyone seems like they have other things to worry about, while I keep seeing disasters and tragedies.&nbsp;
 
 Part of it might be the algorithm. The thing about algorithms is that they tend to distort our reality. We like a post on one topic, and all of a sudden our feeds are flooded with other posts on the same topic. After a while, we develop a certain viewpoint constructed mostly from what we scroll through.&nbsp;
 
@@ -28,7 +28,7 @@ Scroll a little further, though, and it’s posts of ordinary life again, as if 
 \
 Forgive me for pointing out the disconnect. It’s just that I’ve been experiencing so much cognitive dissonance that sometimes I wonder, “Am I crazy for focusing on all of this?” But if I'm questioning my sanity for caring, can’t I also question why more of us aren't outraged?
 
-Maybe it’s how everything is presented to us. On social media, human tragedies are flattened and given almost equal weight. After a while, images of dead children become one blurry scroll.&nbsp;\
+Maybe it’s how everything is presented to us. On social media, human tragedies are flattened and given almost equal weight. After a while, images of dead children become one blurry scroll.&nbsp;
 
 Or maybe it’s the algorithmic bubbles that trap us all. I’m in one, so others could also be in bubbles of their own. Who knows what version of the internet others are witnessing?&nbsp;
 
@@ -49,7 +49,7 @@ Global warming and climate change are already affecting our lands and our seas, 
 
 Yet, the enormity of the situation is exactly the reason why so many of us continually try to minimise or ignore it. Everything seems too big to handle, to even wrap our heads around. The minute we think of the implications of everything happening, there is a real personal cost that we have to consider. Denial becomes a very helpful coping mechanism, then. Why think of all that when we can continue having vacations, going to concerts, and living our best life?
 
-It’s also possible that many of us simply can't fathom the tentacles of suffering reaching us. \
+It’s also possible that many of us simply can't fathom the tentacles of suffering reaching us.
 
 *“Sure, it’s hot now, but that’s what air conditioning is for.”*
 
@@ -63,15 +63,13 @@ The more cynical take is that there are people who know what's happening, know w
 
 In a world where corporations and colonisers are actively trying to extract as much of our value as possible (and slowly killing us in the process), some people might find it easier to pledge fealty to our capitalist overlords. Perhaps their survival instincts are pushing them to find more ways to show loyalty to people at the top, in the hope that they won’t be lumped in with the rest of us plebeians. So they consume, they revel, and, whether they mean to or not, they make the rest of us feel like the crazy ones.
 
-## \
-
-**IV: We’re All Just… Tired**
+## **IV: We’re All Just… Tired**
 
 On the other hand, there is a kinder reading of what some might label as apathy.&nbsp;
 
 What we're going through collectively is not normal. [The planet has never warmed this fast in recorded history](https://time.com/7382950/climate-change-speeding-up-science/), and never has an entire civilisation watched it happen live. Genocides being livestreamed, documented by the people living through them, and delivered to our palms 24/7. Imagine telling someone 50 years ago that they'd carry every catastrophe in the world in their pocket. They'd probably ask, “Why would I subject myself to that?”
 
-Our brains simply aren’t built to process multiple concurrent global catastrophes in real time. In fact, the more people die, the less we care [due to psychic numbing](https://www.cambridge.org/core/books/abs/behavioural-public-policy/more-who-die-the-less-we-care-psychic-numbing-and-genocide/5C41D141244217E7E1CA4D37783E1AEF). As numbers get larger, they fail to trigger the emotion or feeling necessary to motivate action.\
+Our brains simply aren’t built to process multiple concurrent global catastrophes in real time. In fact, the more people die, the less we care [due to psychic numbing](https://www.cambridge.org/core/books/abs/behavioural-public-policy/more-who-die-the-less-we-care-psychic-numbing-and-genocide/5C41D141244217E7E1CA4D37783E1AEF). As numbers get larger, they fail to trigger the emotion or feeling necessary to motivate action.
 
 In the same 20 seconds, we’re supposed to pay attention to a genocide, a flood, an election, someone's breakup, and a new skincare launch. We're expected to remain informed, be politically conscious and socially aware, stay environmentally responsible, *and* be emotionally available. All this while also going to work, paying rent, maintaining relationships, exercising, looking after ourselves and actually living life? How are our brains going to process scale, geography, chronology and personal relevance that’s collapsed into one continuous stream?&nbsp;
 
@@ -79,13 +77,13 @@ In the same 20 seconds, we’re supposed to pay attention to a genocide, a flood
 
 Even when we do have the energy, some of us might not know what actions are useful. After all, we post, protest, argue, donate, and boycott, but change drips slowly. After a while, resistance can feel futile, and the inertia can be debilitating.&nbsp;
 
-That could also be another tool of the system. While it drops bombs in one part of the world, it bombards another part with so much information that it drains us spiritually and physically.&nbsp;\
+That could also be another tool of the system. While it drops bombs in one part of the world, it bombards another part with so much information that it drains us spiritually and physically.&nbsp;
 
 When exhaustion takes over, some of us simply give up. And you know what? Surrender sure looks a lot like indifference.&nbsp;
 
 ## **V: A Way Forward**
 
-I wrote [another post similar to this](https://www.indrairwan.com/blog/two-years-of-suffering) about a year ago. To be honest, the post back then was laced with outrage at the lack of other people’s outrage. While I’d like to say I have outgrown that sentiment, I have to admit there is still a tinge of bitterness.&nbsp;\
+I wrote [another post similar to this](https://www.indrairwan.com/blog/two-years-of-suffering) about a year ago. To be honest, the post back then was laced with outrage at the lack of other people’s outrage. While I’d like to say I have outgrown that sentiment, I have to admit there is still a tinge of bitterness.&nbsp;
 
 What’s changed is that I have come to accept that anger is not the only yardstick for caring. Some people are privately grieving. Some are financially or physically constrained. They might even be doing the work of resistance away from phone screens.&nbsp;
 
