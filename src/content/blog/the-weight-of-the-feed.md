@@ -6,7 +6,7 @@ description: >-
   awareness, how do we stay engaged without burning out? How do we continue to
   care after constant exposure to global news and social media 
 ---
-## **![](./the-weight-of-the-feed/Untitled-design-5.png)**
+## ![](./the-weight-of-the-feed/Untitled-design-5.png)
 
 ## **I: The Collapse We’re Seeing**
 
@@ -34,7 +34,7 @@ Or maybe it’s the algorithmic bubbles that trap us all. I’m in one, so other
 
 Then again, surely they’d have an inkling. The bubbles aren’t perfect. Suffering has a way of eventually seeping into our collective consciousness. In that sense, I think we’ve all lost the privilege of staying oblivious.&nbsp;&nbsp;
 
-## \**III: Survival Instincts\**
+## III: Survival Instincts
 
 If all of us, to an extent, *know* what’s happening, why aren’t our reactions bigger?
 
@@ -65,7 +65,6 @@ In a world where corporations and colonisers are actively trying to extract as m
 
 ## \
 
-\
 **IV: We’re All Just… Tired**
 
 On the other hand, there is a kinder reading of what some might label as apathy.&nbsp;
@@ -83,8 +82,6 @@ Even when we do have the energy, some of us might not know what actions are usef
 That could also be another tool of the system. While it drops bombs in one part of the world, it bombards another part with so much information that it drains us spiritually and physically.&nbsp;\
 
 When exhaustion takes over, some of us simply give up. And you know what? Surrender sure looks a lot like indifference.&nbsp;
-
-\
 
 ## **V: A Way Forward**
 
@@ -110,7 +107,7 @@ We must also accept that no one can carry every tragedy at once. Instead, we can
 
 A lot of that showing up can happen through mutual aid, community groups, or just talking to the people around us. These connections will matter when things get harder closer to home. These are the people we'll lean on. We don't have to start a revolution on our own. We can support people already doing the work and contribute where we can. It makes the work feel less lonely, while also making it easier to keep going. Change is slow, so our effort has to last longer than our outrage.
 
-That's also why rest matters. It’s okay to step away then come back. Going to concerts and enjoying a holiday doesn’t have to mean we’ve stopped caring. We can still enjoy these things, as long as we're doing it to recharge, not to escape. Because when we’re tired and left empty, we become easier to manipulate, easier to distract, and less capable of doing anything meaningful at all. Take a break when it’s needed. Just don't forget to return.
+That's also why rest matters. It’s okay to step away and then come back. Going to concerts and enjoying a holiday doesn’t have to mean we’ve stopped caring. We can still enjoy these things, as long as we're doing it to recharge, not to escape. Because when we’re tired and left empty, we become easier to manipulate, easier to distract, and less capable of doing anything meaningful at all. Take a break when it’s needed. Just don't forget to return.
 
 Obviously, we can’t afford to become oblivious. But neither can we afford to become so overwhelmed by everything going on that we lose our capacity to respond to it; that we sink into mindless consumption to distract ourselves, or withdraw completely because we no longer know what else to do. And that's exactly what the attention economy is counting on.
 
