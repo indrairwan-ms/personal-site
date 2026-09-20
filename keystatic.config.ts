@@ -31,6 +31,14 @@ export default config({
         title: fields.slug({ name: { label: 'Title' } }),
         date: fields.date({ label: 'Date' }),
         description: fields.text({ label: 'Description', multiline: true }),
+        coverImage: fields.image({
+          label: 'Cover Image',
+          description:
+            'Used for social sharing previews (Open Graph/Twitter). Recommended 1200x630px. Falls back to the site default if unset.',
+          directory: 'src/content/blog',
+          publicPath: '.',
+          validation: { isRequired: false },
+        }),
         content: fields.markdoc({
           label: 'Content',
           extension: 'md',

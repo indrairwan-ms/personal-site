@@ -32,7 +32,7 @@ const {
 
 const pageTitle = `${title} — I Am Indra`;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
-const resolvedOgImage = await getImage({ src: image, width: 1200 });
+const resolvedOgImage = await getImage({ src: image, width: 1200, height: 630, fit: 'cover' });
 const ogImageUrl = new URL(resolvedOgImage.src, Astro.site).toString();
 
 const personSchema = {
