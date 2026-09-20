@@ -5,6 +5,10 @@ description: >-
   Between doomscrolling, compassion fatigue, information overload, and political
   awareness, how do we stay engaged without burning out? How do we continue to
   care after constant exposure to global news and social media 
+coverImage: ./the-weight-of-the-feed/coverImage.png
+coverImageAlt: >-
+  A person holding a mobile phone, surrounded by illustrations of
+  internet-related icons
 ---
 ## ![A crowd of people in plain white T-shirts, each looking down at a phone in their hands, absorbed and disconnected from one another.](./the-weight-of-the-feed/Untitled-design-5.png)
 
