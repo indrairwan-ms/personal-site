@@ -39,6 +39,17 @@ export default config({
           publicPath: '.',
           validation: { isRequired: false },
         }),
+        // Kept as a plain sibling field (rather than nesting it under
+        // coverImage) so the site build can enforce "required whenever a
+        // cover image is set" via a Zod .refine() in src/content/config.ts —
+        // Keystatic's own field-level validation can't express a
+        // required-if-sibling-is-set rule, and forcing it unconditionally
+        // would block posts that intentionally have no custom cover image.
+        coverImageAlt: fields.text({
+          label: 'Cover Image Alt Text',
+          description:
+            'Describe what\'s in the cover image, for screen readers and platforms that read image alt text. Required if a cover image is set above — the site build fails without it.',
+        }),
         content: fields.markdoc({
           label: 'Content',
           extension: 'md',
@@ -54,6 +65,16 @@ export default config({
               directory: 'src/content/blog',
               publicPath: '.',
               transformFilename: sanitizeUploadedFilename,
+              // Keystatic's markdoc image insert already has a built-in
+              // (optional-by-default) alt text field in its upload dialog;
+              // this just makes it mandatory so it can't be skipped.
+              schema: {
+                alt: fields.text({
+                  label: 'Alt Text',
+                  description: 'Describe what\'s in the image, for screen readers and search engines.',
+                  validation: { isRequired: true },
+                }),
+              },
             },
           },
         }),
