@@ -6,7 +6,7 @@ description: >-
   awareness, how do we stay engaged without burning out? How do we continue to
   care after constant exposure to global news and social media 
 ---
-## ![](./the-weight-of-the-feed/Untitled-design-5.png)
+## ![A crowd of people in plain white T-shirts, each looking down at a phone in their hands, absorbed and disconnected from one another.](./the-weight-of-the-feed/Untitled-design-5.png)
 
 ## **I: The Collapse We’re Seeing**
 

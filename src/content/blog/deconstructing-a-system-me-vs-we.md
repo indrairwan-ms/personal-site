@@ -22,7 +22,7 @@ The ruling elite of the Malacca Sultanate prioritised personal power and faction
 Historian Ibn Khaldun provided a framework called Asabiyyah (social solidarity) explaining how this has repeatedly happened throughout history:
 
 \
-![](./deconstructing-a-system-me-vs-we/Asabiyyah.webp)
+![Diagram titled "Asabiyyah: Social Solidarity & Its Role in Empires," showing a four-stage cycle: Rise (new empires built on shared purpose), Peak (success brings luxury and comfort), Decline (luxury breeds individualism and lost identity), and Fall (the hollow empire is conquered by a more cohesive group).](./deconstructing-a-system-me-vs-we/Asabiyyah.webp)
 
 *Sounds familiar?*
 

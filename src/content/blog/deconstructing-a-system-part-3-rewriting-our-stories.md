@@ -18,7 +18,7 @@ To be fair, individualism does have its merits. It offered us the autonomy to de
 
 The challenge now isn't to return to the rigid systems of the past, but to build a new belonging. Something that preserves our individuality while re-learning the essential art of being responsible for one another.
 
-![](./deconstructing-a-system-part-3-rewriting-our-stories/autonomy-with-interdependence-1600x768.webp)
+![Diagram titled "The Spectrum," showing a line from Isolation/Hyper-Individualism (labeled "The Current Trap") through Autonomy with Interdependence (labeled "The Goal") to Submission/Collective Erasure (labeled "The Old Trap").](./deconstructing-a-system-part-3-rewriting-our-stories/autonomy-with-interdependence-1600x768.webp)
 
 But the question is: how do we course correct?
 
@@ -70,7 +70,7 @@ The work ahead is learning to relate again as *I-Thou*.
 
 Here's a framework that might help get us there.
 
-![](./deconstructing-a-system-part-3-rewriting-our-stories/autonomy-with-interdependence-1600x768-1600x1200.webp)
+![Diagram titled "Writing a New Narrative," showing a four-step cycle around the label "Intentional Interdependence": Reclaim the Self (de-link from the system), Replace the Market (build local mutual-aid structures), Design New Belonging (consent-based, conflict-ready communities), and Weave Interdependence (choose each other over the system), looping back to the start.](./deconstructing-a-system-part-3-rewriting-our-stories/autonomy-with-interdependence-1600x768-1600x1200.webp)
 
 **1. Reclaiming the Self**
 
