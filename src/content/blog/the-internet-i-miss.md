@@ -14,7 +14,7 @@ As I was mindlessly doomscrolling through a feed of people I didn’t know (and 
 
 Honestly, it's been a while.
 
-Now, am I a millennial? Yes, so I've personally witnessed the gamut of its evolution. And I remember the Internet as a very different kind of digital landscape. Do you remember a time before algorithms, before blue checks, and before the whole world became an open-concept boutique where everything is for sale?
+Now, am I a millennial? Yes, so I've personally witnessed the gamut of the Internet's evolution. And I remember it as a very different kind of digital landscape. It was a time before algorithms and blue checks, and before the whole world became an open-concept boutique where everything is for sale.
 
 If a Gen Z is reading this, they’re probably rolling their eyes over their oatmilk matcha lattes, whispering to themselves, *“Oh, look, another elder mourning the nineties.”*
 
