@@ -51,7 +51,7 @@ We used to stumble into delightfully bizarre rabbit holes, quirky personal web p
 
 > “A million mini worlds instead of one big universe.”
 
-Don't get me wrong. I'm not saying there are zero discoveries to be made nowadays. But the boundaries of our exploration only shift every few scrolls. The tragic irony is that we carry the entire sum of human knowledge in the palm of our hands, yet we feel smaller than ever. The modern feed doesn't expand our horizons. It’s a funhouse mirror, trapping us in our own neuroses, our biases, reflecting our deepest insecurities back at us dressed up as "personalised content." It's moving inwards rather than expanding; it's become a million mini worlds instead of one big universe. That's why it feels claustrophobic and suffocating. It’s a cocktail party where everyone is talking into a microphone, but nobody is actually listening to anyone else.
+Don't get me wrong. I'm not saying there are zero discoveries to be made nowadays. But the boundaries of our exploration only shift every few scrolls. The tragic irony is that we carry the entire sum of human knowledge in the palm of our hands, yet we feel smaller than ever. The modern feed doesn't expand our horizons. It’s a funhouse mirror, trapping us in our own neuroses, our biases, reflecting our deepest insecurities back at us dressed up as "personalised content." It's moving inwards rather than expanding; it's become a million mini worlds instead of one big universe. That's why it feels claustrophobic and suffocating.
 
 ## III: Terms and Conditions Apply
 
