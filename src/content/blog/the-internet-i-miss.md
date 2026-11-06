@@ -1,6 +1,6 @@
 ---
 title: The Internet I Miss
-date: 2026-10-16
+date: 2026-11-06
 description: >-
   What made the Internet such a magical place, and how that cyberspace is no
   longer the same. 
