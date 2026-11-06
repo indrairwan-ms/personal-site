@@ -18,7 +18,7 @@ As I was mindlessly doomscrolling through a feed of people I didn’t know (and 
 
 Honestly, it's been a while.
 
-Now, am I a millennial? Yes, so I've personally witnessed the gamut of its evolution. And I remember the Internet as a very different kind of digital landscape. Do you remember a time before algorithms, before blue checks, and before the whole world became an open-concept boutique where everything is for sale?
+Now, am I a millennial? Yes, so I've personally witnessed the gamut of the Internet's evolution. And I remember it as a very different kind of digital landscape. It was a time before algorithms and blue checks, and before the whole world became an open-concept boutique where everything is for sale.
 
 If a Gen Z is reading this, they’re probably rolling their eyes over their oatmilk matcha lattes, whispering to themselves, *“Oh, look, another elder mourning the nineties.”*
 
@@ -40,7 +40,7 @@ You could say part of it was because I was young and full of wide-eyed innocence
 \
 Maybe that's why the walled-garden Internet we have right now feels so jarring.
 
-Now, it’s a velvet-roped VIP lounge where everyone has to show ID, pay a cover charge, and endure targeted ads for Kim K's shapewear. Want to read a thoughtful piece of writing? Pay up. Want to look at a photograph? Let five conglomerates harvest your eye movements so they can pitch you a designer serum you don't need. Like one little thing? Congratulations, darling. You have earned a lifetime pass to an echo chamber where the next ten thousand videos will be nothing but the same thing in different formats. All served up as reheated nachos that somehow still manage to keep you docile, primed, and swiping until your thumbs go numb.
+Now, it’s a velvet-roped lounge where everyone has to show ID, pay a cover charge, and endure targeted ads for Kim K's shapewear. Want to read a thoughtful piece of writing? Pay up. Want to look at a photograph? Let five conglomerates harvest your eye movements so they can pitch you a designer serum you don't need. Like one little thing? Congratulations, darling. You have earned a lifetime pass to an echo chamber where the next ten thousand videos will be nothing but the same thing in different formats. All served up as reheated nachos that somehow still manage to keep you docile, primed, and swiping until your thumbs go numb.
 
 > We don’t explore; we are fed.
 
@@ -55,7 +55,7 @@ We used to stumble into delightfully bizarre rabbit holes, quirky personal web p
 
 > “A million mini worlds instead of one big universe.”
 
-Don't get me wrong. I'm not saying there are zero discoveries to be made nowadays. But the boundaries of our exploration only shift every few scrolls. The tragic irony is that we carry the entire sum of human knowledge in the palm of our hands, yet we feel smaller than ever. The modern feed doesn't expand our horizons. It’s a funhouse mirror, trapping us in our own neuroses, our biases, reflecting our deepest insecurities back at us dressed up as "personalised content." It's moving inwards rather than expanding; it's become a million mini worlds instead of one big universe. That's why it feels claustrophobic and suffocating. It’s a cocktail party where everyone is talking into a microphone, but nobody is actually listening to anyone else.
+Don't get me wrong. I'm not saying there are zero discoveries to be made nowadays. But the boundaries of our exploration only shift every few scrolls. The tragic irony is that we carry the entire sum of human knowledge in the palm of our hands, yet we feel smaller than ever. The modern feed doesn't expand our horizons. It’s a funhouse mirror, trapping us in our own neuroses, our biases, reflecting our deepest insecurities back at us dressed up as "personalised content." It's moving inwards rather than expanding; it's become a million mini worlds instead of one big universe. That's why it feels claustrophobic and suffocating.
 
 ## III: Terms and Conditions Apply
 
