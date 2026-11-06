@@ -36,7 +36,7 @@ You could say part of it was because I was young and full of wide-eyed innocence
 \
 Maybe that's why the walled-garden Internet we have right now feels so jarring.
 
-Now, it’s a velvet-roped VIP lounge where everyone has to show ID, pay a cover charge, and endure targeted ads for Kim K's shapewear. Want to read a thoughtful piece of writing? Pay up. Want to look at a photograph? Let five conglomerates harvest your eye movements so they can pitch you a designer serum you don't need. Like one little thing? Congratulations, darling. You have earned a lifetime pass to an echo chamber where the next ten thousand videos will be nothing but the same thing in different formats. All served up as reheated nachos that somehow still manage to keep you docile, primed, and swiping until your thumbs go numb.
+Now, it’s a velvet-roped lounge where everyone has to show ID, pay a cover charge, and endure targeted ads for Kim K's shapewear. Want to read a thoughtful piece of writing? Pay up. Want to look at a photograph? Let five conglomerates harvest your eye movements so they can pitch you a designer serum you don't need. Like one little thing? Congratulations, darling. You have earned a lifetime pass to an echo chamber where the next ten thousand videos will be nothing but the same thing in different formats. All served up as reheated nachos that somehow still manage to keep you docile, primed, and swiping until your thumbs go numb.
 
 > We don’t explore; we are fed.
 
