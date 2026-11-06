@@ -6,8 +6,9 @@ description: >-
   longer the same. 
 coverImage: ./the-internet-i-miss/coverImage.png
 coverImageAlt: >-
-  Illustration of a blue computer monitor displaying the word "hello?",
-  connected by a curly cord to a black rotary telephone.
+  Illustration of a white computer monitor displaying the word "hello?",
+  connected by a curly cord to a white rotary telephone, against a blue sky
+  with stars.
 ---
 ## I: You Remember the Internet?
 
@@ -29,7 +30,7 @@ You had to search. You had to dig. The places you gathered at? All had high fric
 \
 I couldn't help but think about my early days exploring the Internet. You see, for me, a computer wasn’t simply sitting on a desk  in my room, always ready to be switched on. I had to scrape together pocket money, walk down to some dimly lit, slightly smoky cyber cafe, and pay by the hour. I remember sitting there, heart pounding, discreetly looking up obscure passions I dared not admit to at school. For me, that passion was manga and music videos banned by the government.
 
-![Illustration of a person in an orange top sitting at a cyber cafe desk, waiting on a screen that says "Connecting...", with a row of monitors behind.](./the-internet-i-miss/section-1-cyber-cafe.png)
+![Illustration of a person in a blue top sitting at a cyber cafe desk, waiting on a screen that says "Connecting...", with a row of monitors behind.](./the-internet-i-miss/section-1-cyber-cafe.png)
 
 Sure, it wasn't a perfect scenario. But it made everything more beautiful. Back then every minute mattered. Every click was an intentional, desperate reach for something outside of my small world.
 
